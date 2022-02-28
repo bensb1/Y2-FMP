@@ -160,4 +160,4 @@ MonoBehaviour:
   ySpeed: 5
   canShoot: 0
   fireRate: 0
-  Health: 0
+  Health: 2

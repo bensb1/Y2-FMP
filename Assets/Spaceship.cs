@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Spaceship : MonoBehaviour
 {
+    int delay = 0;
+    GameObject a,b;
+    public GameObject bullet;
     Rigidbody2D rb;
      public float speed;
     int health = 3;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        a =transform.Find("a").gameObject;
+        b =transform.Find("b").gameObject;
     }
     // Start is called before the first frame update
     void Start()
@@ -22,6 +27,14 @@ public class Spaceship : MonoBehaviour
     {
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal")*speed,0));
         rb.AddForce(new Vector2(0,Input.GetAxis("Vertical") * speed));
+        if (Input.GetKey(KeyCode.Space)&&delay>10)
+        {
+            Shoot();
+
+            
+        }
+
+        delay++;
     }
     public void Damage()
     {
@@ -30,5 +43,10 @@ public class Spaceship : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    void Shoot()
+    {
+        Instantiate(bullet, a.transform.position, Quaternion.identity);
+        Instantiate(bullet, b.transform.position, Quaternion.identity);
     }
 }

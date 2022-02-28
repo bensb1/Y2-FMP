@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    void Damage()
+   public void Damage()
     {
         Health--;
         if (Health == 0)
