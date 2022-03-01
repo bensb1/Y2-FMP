@@ -156,8 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3c5012dfaac52408a557aa5b3b6b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  explosion: {fileID: 6647379323841190202, guid: d39750de2dc607e4fabb5c2750e54fd9, type: 3}
+  bulletcolor: {r: 0, g: 0, b: 0, a: 0}
   xSpeed: 0
   ySpeed: 8
+  score: 100
   canShoot: 0
   fireRate: 0
   Health: 4

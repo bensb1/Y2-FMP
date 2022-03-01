@@ -6,7 +6,7 @@ public class Spaceship : MonoBehaviour
 {
     int delay = 0;
     GameObject a,b;
-    public GameObject bullet;
+    public GameObject bullet,explosion;
     Rigidbody2D rb;
      public float speed;
     int health = 3;
@@ -38,10 +38,18 @@ public class Spaceship : MonoBehaviour
     }
     public void Damage()
     {
+        StartCoroutine(Blink());
         health--;
         if(health ==0)
         {
-            Destroy(gameObject);
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(gameObject,0.1f);
+        }
+        IEnumerator Blink()
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 0, 0);
+            yield return new WaitForSeconds(0.1f);
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
         }
     }
     void Shoot()

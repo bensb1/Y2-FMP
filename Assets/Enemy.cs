@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject bullet;
+    public GameObject bullet,explosion;
     Rigidbody2D rb;
     public Color bulletcolor;
 
-   public float xSpeed;
-    public float ySpeed;
+   public float xSpeed,ySpeed;
+    public int score;
     public bool canShoot;
     public float fireRate;
     public float Health;
@@ -43,6 +43,8 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {
+        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
+        Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
    public void Damage()

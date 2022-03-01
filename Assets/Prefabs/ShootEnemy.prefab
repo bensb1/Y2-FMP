@@ -102,9 +102,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4158352657879945460, guid: 23bb699355498284da056f9692a770bb, type: 3}
+  explosion: {fileID: 6647379323841190202, guid: d39750de2dc607e4fabb5c2750e54fd9, type: 3}
   bulletcolor: {r: 1, g: 0, b: 0.9816508, a: 1}
   xSpeed: 0
   ySpeed: 2
+  score: 150
   canShoot: 1
   fireRate: 3
   Health: 20
