@@ -66,6 +66,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8187766186397765422}
+  - component: {fileID: 7653723268572194158}
   m_Layer: 6
   m_Name: Borders
   m_TagString: Untagged
@@ -91,6 +92,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7653723268572194158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8187766186397765423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0911960117c861d4e839142155a42eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rate: 2
+  enemies:
+  - {fileID: 8066043077609915883, guid: 405a00caa45440c4584866dc64ab4df9, type: 3}
 --- !u!1 &8187766186788509464
 GameObject:
   m_ObjectHideFlags: 0

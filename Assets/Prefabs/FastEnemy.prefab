@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0
-  ySpeed: 5
+  ySpeed: 8
   canShoot: 0
   fireRate: 0
-  Health: 2
+  Health: 4
