@@ -46,6 +46,7 @@ public class Spaceship : MonoBehaviour
     }
     void Shoot()
     {
+        delay = 0;
         Instantiate(bullet, a.transform.position, Quaternion.identity);
         Instantiate(bullet, b.transform.position, Quaternion.identity);
     }

@@ -11,10 +11,18 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+    private void Start()
+    {
+        Destroy(gameObject, 5);
+    }
     // Start is called before the first frame update
     public void ChangeDirection()
     {
         dir *= -1;
+    }
+    public void ChangeColor(Color col)
+    {
+        GetComponent<SpriteRenderer>().color = col;
     }
 
     // Update is called once per frame

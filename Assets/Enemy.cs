@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject bullet;
     Rigidbody2D rb;
+    public Color bulletcolor;
 
    public float xSpeed;
     public float ySpeed;
@@ -18,7 +20,12 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(gameObject, 10);
+        if (!canShoot) return;
+        {
+            fireRate = fireRate + (Random.Range(fireRate / -2, fireRate / 2));
+            InvokeRepeating("Shoot", fireRate, fireRate);
+        }
     }
 
     // Update is called once per frame
@@ -45,5 +52,11 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+    }
+    void Shoot()
+    {
+        GameObject temp = (GameObject)Instantiate(bullet, transform.position, Quaternion.identity);
+        temp.GetComponent<Bullet>().ChangeDirection();
+        temp.GetComponent<Bullet>().ChangeColor(bulletcolor);
     }
 }
