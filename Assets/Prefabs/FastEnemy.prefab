@@ -158,6 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
   explosion: {fileID: 6647379323841190202, guid: d39750de2dc607e4fabb5c2750e54fd9, type: 3}
+  Extralife: {fileID: 5769147328760591007, guid: 79b481088677fcd49a68d51fb605a302, type: 3}
   bulletcolor: {r: 0, g: 0, b: 0, a: 0}
   xSpeed: 0
   ySpeed: 8

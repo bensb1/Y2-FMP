@@ -16,6 +16,10 @@ public class Spaceship : MonoBehaviour
         a =transform.Find("a").gameObject;
         b =transform.Find("b").gameObject;
     }
+    private void Start()
+    {
+        PlayerPrefs.SetInt("Health", health);
+    }
     // Start is called before the first frame update
 
 
@@ -37,7 +41,8 @@ public class Spaceship : MonoBehaviour
     {
         StartCoroutine(Blink());
         health--;
-        if(health ==0)
+        PlayerPrefs.SetInt("Health", health);
+        if (health ==0)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject,0.1f);
@@ -54,5 +59,10 @@ public class Spaceship : MonoBehaviour
         delay = 0;
         Instantiate(bullet, a.transform.position, Quaternion.identity);
         Instantiate(bullet, b.transform.position, Quaternion.identity);
+    }
+    public void AddHealth()
+    {
+        health++;
+        PlayerPrefs.SetInt("Health", health);
     }
 }

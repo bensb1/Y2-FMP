@@ -28,6 +28,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1037503123, guid: 65694fcf3e74a55448107288f4dab36e, type: 3}
+      propertyPath: Extralife
+      value: 
+      objectReference: {fileID: 5769147328760591007, guid: 79b481088677fcd49a68d51fb605a302, type: 3}
+    - target: {fileID: 1037503123, guid: 65694fcf3e74a55448107288f4dab36e, type: 3}
       propertyPath: bulletcolor.a
       value: 1
       objectReference: {fileID: 0}

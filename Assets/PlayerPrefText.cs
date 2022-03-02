@@ -16,6 +16,6 @@ public class PlayerPrefText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = PlayerPrefs.GetInt("Score") + "";  
+        GetComponent<Text>().text = PlayerPrefs.GetInt(name) + "";  
     }
 }

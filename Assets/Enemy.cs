@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject bullet,explosion;
+    public GameObject bullet,explosion,Extralife;
     Rigidbody2D rb;
     public Color bulletcolor;
 
@@ -43,6 +43,10 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {
+        if( (int)Random.Range(0,3)==0)
+        {
+            Instantiate(Extralife, transform.position, Quaternion.identity);
+        }
         PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
