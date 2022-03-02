@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 10);
+        
         if (!canShoot) return;
         {
             fireRate = fireRate + (Random.Range(fireRate / -2, fireRate / 2));
