@@ -14,4 +14,8 @@ public void Quit()
         PlayerPrefs.SetInt("Score", 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+    }
 }
