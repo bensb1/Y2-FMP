@@ -101,10 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3c5012dfaac52408a557aa5b3b6b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4158352657879945460, guid: 23bb699355498284da056f9692a770bb, type: 3}
+  bullet: {fileID: 4158352657879945460, guid: 956fa8ce5dba3cc48be1bd0ecd8cd03e, type: 3}
   explosion: {fileID: 6647379323841190202, guid: d39750de2dc607e4fabb5c2750e54fd9, type: 3}
   Extralife: {fileID: 5769147328760591007, guid: 79b481088677fcd49a68d51fb605a302, type: 3}
-  bulletcolor: {r: 1, g: 0, b: 0.9816508, a: 1}
+  bulletcolor: {r: 1, g: 1, b: 1, a: 1}
   xSpeed: 0
   ySpeed: 2
   score: 150

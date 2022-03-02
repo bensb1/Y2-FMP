@@ -578,6 +578,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 991328475, guid: 127256b8f5d593341b852d52d022756d, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4158352657879945460, guid: ebd491c5ec631e640b99b726d6f1e434, type: 3}
     - target: {fileID: 2715859439107399687, guid: 127256b8f5d593341b852d52d022756d, type: 3}
       propertyPath: m_Name
       value: ship1
