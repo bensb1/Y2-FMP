@@ -156,8 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3c5012dfaac52408a557aa5b3b6b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  changeDirection: 0
   bullet: {fileID: 0}
   explosion: {fileID: 6647379323841190202, guid: d39750de2dc607e4fabb5c2750e54fd9, type: 3}
   Extralife: {fileID: 5769147328760591007, guid: 79b481088677fcd49a68d51fb605a302, type: 3}

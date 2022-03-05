@@ -104,12 +104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0911960117c861d4e839142155a42eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rate: 1
+  rate: 2
   enemies:
   - {fileID: 8066043077609915883, guid: 405a00caa45440c4584866dc64ab4df9, type: 3}
-  - {fileID: 3517004634544866896, guid: 65694fcf3e74a55448107288f4dab36e, type: 3}
-  - {fileID: 2351033230261465860, guid: 7792f9e553599cc459d42ac207660cd5, type: 3}
-  waves: 2
 --- !u!1 &8187766186788509464
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +118,7 @@ GameObject:
   - component: {fileID: 8187766186788509466}
   - component: {fileID: 8187766186788509467}
   m_Layer: 6
-  m_Name: RightWall
+  m_Name: Border (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,7 +232,7 @@ GameObject:
   - component: {fileID: 8187766187381890166}
   - component: {fileID: 8187766187381890167}
   m_Layer: 6
-  m_Name: LeftWall
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
