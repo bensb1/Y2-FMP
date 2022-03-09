@@ -106,9 +106,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rate: 1
   enemies:
-  - {fileID: 1572833160055499602, guid: d5b9f82c1e8aa2f44a12eaf0c44a6d4e, type: 3}
-  - {fileID: 1572833160055499602, guid: d5b9f82c1e8aa2f44a12eaf0c44a6d4e, type: 3}
-  - {fileID: 1572833160055499602, guid: d5b9f82c1e8aa2f44a12eaf0c44a6d4e, type: 3}
+  - {fileID: 8066043077609915883, guid: 405a00caa45440c4584866dc64ab4df9, type: 3}
+  - {fileID: 0}
+  - {fileID: 2351033230261465860, guid: 7792f9e553599cc459d42ac207660cd5, type: 3}
   waves: 2
 --- !u!1 &8187766186788509464
 GameObject:
