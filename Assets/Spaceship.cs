@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Spaceship : MonoBehaviour
 {
+
+    public Animator anim;
+    private State state = State.idle;
+    private enum State { idle,Moving,Jumping,falling, hurt}
     int delay = 0;
     GameObject a,b;
     public GameObject bullet,explosion;
@@ -12,12 +16,14 @@ public class Spaceship : MonoBehaviour
     int health = 3;
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         a =transform.Find("a").gameObject;
         b =transform.Find("b").gameObject;
     }
     private void Start()
     {
+        
         PlayerPrefs.SetInt("Health", health);
     }
     // Start is called before the first frame update
@@ -28,6 +34,8 @@ public class Spaceship : MonoBehaviour
     {
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal")*speed,0));
         rb.AddForce(new Vector2(0,Input.GetAxis("Vertical") * speed));
+        // anim.SetBool("Moving", true);
+        anim.SetInteger("State", (int)state); //sets animation based on enuemrator state */
         if (Input.GetKey(KeyCode.Space)&&delay>10)
         {
             Shoot();
@@ -36,6 +44,8 @@ public class Spaceship : MonoBehaviour
         }
 
         delay++;
+        AnimationState();
+        
     }
     public void Damage()
     {
@@ -65,4 +75,21 @@ public class Spaceship : MonoBehaviour
         health++;
         PlayerPrefs.SetInt("Health", health);
     }
+    private void AnimationState()
+    {
+        if (Mathf.Abs(rb.velocity.x) < .1f)
+        {
+            state = State.idle;
+        }
+    
+         else if(Mathf.Abs(rb.velocity.x) > 2f)
+        {
+            //Moving
+            state = State.Moving;
+        }
+    else
+{
+    state = State.idle;
+}
+    } 
 }
