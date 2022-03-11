@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject bullet,explosion,Extralife;
+    public GameObject Blue_bullet,Green_Bullet,Purple_Bullet;
     Rigidbody2D rb;
     public Color bulletcolor;
 
@@ -16,10 +17,15 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        
+
     }
     // Start is called before the first frame update
     void Start()
     {
+         Blue_bullet.SetActive(false);
+        Green_Bullet.SetActive(false);
+        Purple_Bullet.SetActive(false);
         
         if (!canShoot) return;
         {
@@ -54,6 +60,28 @@ public class Enemy : MonoBehaviour
    public void Damage()
     {
         Health--;
+        Blue_bullet.SetActive(true);
+        if (Blue_bullet.gameObject == true)
+        {
+            Green_Bullet.SetActive(false);
+            Purple_Bullet.SetActive(false);
+            Health =- 3;
+        }
+       
+        else if (Green_Bullet.gameObject == true)
+        {
+            Blue_bullet.SetActive(false);
+            Green_Bullet.SetActive(true);
+            Health = -4;
+        }
+       else if (Purple_Bullet.gameObject ==true)
+        {
+            Blue_bullet.SetActive(false);
+            Green_Bullet.SetActive(false);
+            Purple_Bullet.SetActive(true);
+            Health = - 5;
+        }
+
         if (Health == 0)
         {
             Die();
@@ -66,3 +94,4 @@ public class Enemy : MonoBehaviour
         temp.GetComponent<Bullet>().ChangeColor(bulletcolor);
     }
 }
+ 
