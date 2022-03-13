@@ -107,7 +107,7 @@ MonoBehaviour:
   rate: 1
   enemies:
   - {fileID: 8066043077609915883, guid: 405a00caa45440c4584866dc64ab4df9, type: 3}
-  - {fileID: 0}
+  - {fileID: 3517004634544866896, guid: 7f3c9b3f5649d7c4dbbd1877ce3a5550, type: 3}
   - {fileID: 2351033230261465860, guid: 7792f9e553599cc459d42ac207660cd5, type: 3}
   waves: 2
 --- !u!1 &8187766186788509464

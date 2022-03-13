@@ -12,6 +12,7 @@ public class Spaceship : MonoBehaviour
     GameObject a,b;
     public GameObject bullet,explosion;
     public GameObject Blue_bullet;
+    
     Rigidbody2D rb;
      public float speed;
     int health = 3;
@@ -68,12 +69,18 @@ public class Spaceship : MonoBehaviour
     void Shoot()
     {
         delay = 0;
+        if (Blue_bullet.activeSelf == true)
+        {
+            
+            
+            bullet = Blue_bullet;
+        }
         Instantiate(bullet, a.transform.position, Quaternion.identity);
         Instantiate(bullet, b.transform.position, Quaternion.identity);
-        if(Blue_bullet.activeInHierarchy ) { 
-        }
-        bullet = Blue_bullet;   
-        }
+        
+
+        
+    }
     
     public void AddHealth()
     {

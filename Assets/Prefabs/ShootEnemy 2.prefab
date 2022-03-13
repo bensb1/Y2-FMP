@@ -104,9 +104,9 @@ MonoBehaviour:
   bullet: {fileID: 4158352657879945460, guid: 956fa8ce5dba3cc48be1bd0ecd8cd03e, type: 3}
   explosion: {fileID: 6647379323841190202, guid: d39750de2dc607e4fabb5c2750e54fd9, type: 3}
   Extralife: {fileID: 5769147328760591007, guid: 79b481088677fcd49a68d51fb605a302, type: 3}
-  Blue_bullet: {fileID: 0}
-  Green_Bullet: {fileID: 0}
-  Purple_Bullet: {fileID: 0}
+  Blue_bullet: {fileID: 5677001677079265020, guid: f31ce429f80f04c439583817634ad5c3, type: 3}
+  Green_Bullet: {fileID: 3168169990063308748, guid: 81769517937256b47a26f9e45226ec22, type: 3}
+  Purple_Bullet: {fileID: 7969250234561990012, guid: 516c56f81b70a72489554d7d7f973cc4, type: 3}
   bulletcolor: {r: 1, g: 1, b: 1, a: 1}
   xSpeed: 0
   ySpeed: 2

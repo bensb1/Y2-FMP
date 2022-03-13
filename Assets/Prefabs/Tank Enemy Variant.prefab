@@ -32,6 +32,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5769147328760591007, guid: 79b481088677fcd49a68d51fb605a302, type: 3}
     - target: {fileID: 1037503123, guid: 65694fcf3e74a55448107288f4dab36e, type: 3}
+      propertyPath: Blue_bullet
+      value: 
+      objectReference: {fileID: 5677001677079265020, guid: f31ce429f80f04c439583817634ad5c3, type: 3}
+    - target: {fileID: 1037503123, guid: 65694fcf3e74a55448107288f4dab36e, type: 3}
+      propertyPath: Green_Bullet
+      value: 
+      objectReference: {fileID: 3168169990063308748, guid: 81769517937256b47a26f9e45226ec22, type: 3}
+    - target: {fileID: 1037503123, guid: 65694fcf3e74a55448107288f4dab36e, type: 3}
+      propertyPath: Purple_Bullet
+      value: 
+      objectReference: {fileID: 7969250234561990012, guid: 516c56f81b70a72489554d7d7f973cc4, type: 3}
+    - target: {fileID: 1037503123, guid: 65694fcf3e74a55448107288f4dab36e, type: 3}
       propertyPath: bulletcolor.a
       value: 1
       objectReference: {fileID: 0}
