@@ -12,12 +12,13 @@ public class Spaceship : MonoBehaviour
     GameObject a,b;
     public GameObject bullet,explosion;
     public GameObject Blue_bullet;
-    
+    public GameObject Green_Bullet;
     Rigidbody2D rb;
      public float speed;
     int health = 3;
     private void Awake()
     {
+        
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         a =transform.Find("a").gameObject;
@@ -69,12 +70,30 @@ public class Spaceship : MonoBehaviour
     void Shoot()
     {
         delay = 0;
-        if (Blue_bullet.activeSelf == true)
+       // Blue_bullet.gameObject.SetActive(true);
+        Debug.Log(Blue_bullet.activeInHierarchy);
+        if (Blue_bullet.activeSelf== true)
         {
             
             
             bullet = Blue_bullet;
+            Debug.Log(Green_Bullet.activeInHierarchy);
         }
+        
+        else if (Green_Bullet.activeSelf == true)
+        {
+            
+
+
+
+            Green_Bullet.SetActive(true);
+            bullet = Green_Bullet;
+        
+
+            
+           
+        }
+        
         Instantiate(bullet, a.transform.position, Quaternion.identity);
         Instantiate(bullet, b.transform.position, Quaternion.identity);
         

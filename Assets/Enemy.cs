@@ -63,17 +63,17 @@ public class Enemy : MonoBehaviour
 
         if (Blue_bullet.activeSelf == true)
         {
-            Debug.Log(isActiveAndEnabled);
+           
             
             Health = Health - 2;
-            Debug.Log(Health);
+            
         }
        
         else if (Green_Bullet.activeSelf == true)
         {
-            Blue_bullet.SetActive(false);
-            Green_Bullet.SetActive(true);
+           
             Health = Health -4;
+            Debug.Log(Health);
         }
        else if (Purple_Bullet.activeInHierarchy )
         {
