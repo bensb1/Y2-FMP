@@ -439,6 +439,7 @@ MonoBehaviour:
   explosion: {fileID: 6647379323841190202, guid: fcdde25ab9f15e3409cd5804877bdb42, type: 3}
   Blue_bullet: {fileID: 5677001677079265020, guid: f31ce429f80f04c439583817634ad5c3, type: 3}
   Green_Bullet: {fileID: 3168169990063308748, guid: 81769517937256b47a26f9e45226ec22, type: 3}
+  Purple_Bullet: {fileID: 7969250234561990012, guid: 516c56f81b70a72489554d7d7f973cc4, type: 3}
   speed: 2
 --- !u!95 &271941993
 Animator:

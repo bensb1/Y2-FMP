@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour
             Health = Health -4;
             Debug.Log(Health);
         }
-       else if (Purple_Bullet.activeInHierarchy )
+       else if (Purple_Bullet.activeSelf == true )
         {
             Blue_bullet.SetActive(false);
             Green_Bullet.SetActive(false);

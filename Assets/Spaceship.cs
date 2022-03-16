@@ -13,6 +13,7 @@ public class Spaceship : MonoBehaviour
     public GameObject bullet,explosion;
     public GameObject Blue_bullet;
     public GameObject Green_Bullet;
+    public GameObject Purple_Bullet;
     Rigidbody2D rb;
      public float speed;
     int health = 3;
@@ -82,8 +83,8 @@ public class Spaceship : MonoBehaviour
         
         else if (Green_Bullet.activeSelf == true)
         {
-            
-
+            Blue_bullet.SetActive(false);
+           // Blue_bullet.gameObject.SetActive = false;
 
 
             Green_Bullet.SetActive(true);
@@ -93,8 +94,12 @@ public class Spaceship : MonoBehaviour
             
            
         }
-        
-        Instantiate(bullet, a.transform.position, Quaternion.identity);
+        else if (Purple_Bullet.activeSelf == true)
+        {
+            bullet = Purple_Bullet;
+        }
+
+            Instantiate(bullet, a.transform.position, Quaternion.identity);
         Instantiate(bullet, b.transform.position, Quaternion.identity);
         
 
