@@ -12,8 +12,10 @@ public class ShopControl : MonoBehaviour
     public Text moneyAmountText;
     public Text BluebulletPrice;
     public Button buyButton;
+    public GameObject Bluebullet;
     private void Start()
     {
+
         Coins = PlayerPrefs.GetInt("Coins");
     }
     private void Update()
@@ -39,15 +41,18 @@ public class ShopControl : MonoBehaviour
         PlayerPrefs.SetInt("isBluebulletSold", 1);
         BluebulletPrice.text = "Sold!";
         buyButton.gameObject.SetActive(false);
-        
-        
+        Spaceship ship = GameObject.Find("Player").GetComponent<Spaceship>();
+        ship.bulletType = Spaceship.BulletType.blue;
+
+
+
     }
     public void resetPlayerPrefs()
     {
         Coins = 0;
         buyButton.gameObject.SetActive(true);
         BluebulletPrice.text = "Price: 100$";
-         PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
     public void exitButton()
     {

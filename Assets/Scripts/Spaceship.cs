@@ -7,27 +7,31 @@ public class Spaceship : MonoBehaviour
 
     public Animator anim;
     private State state = State.idle;
-    private enum State { idle,Moving,Jumping,falling, hurt}
+    private enum State { idle, Moving, Jumping, falling, hurt }
     int delay = 0;
-    GameObject a,b;
-    public GameObject bullet,explosion;
+    GameObject a, b;
+    public GameObject bullet, explosion;
     public GameObject Blue_bullet;
     public GameObject Green_Bullet;
     public GameObject Purple_Bullet;
+    // public int bulletType = 1;
+     public enum  BulletType { Normal,Green,blue,purple }; 
+   public BulletType bulletType = BulletType.Normal;
     Rigidbody2D rb;
-     public float speed;
+    public float speed;
     int health = 3;
     private void Awake()
     {
-        
+
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        a =transform.Find("a").gameObject;
-        b =transform.Find("b").gameObject;
+        a = transform.Find("a").gameObject;
+        b = transform.Find("b").gameObject;
     }
     private void Start()
     {
-        
+
+
         PlayerPrefs.SetInt("Health", health);
     }
     // Start is called before the first frame update
@@ -36,30 +40,30 @@ public class Spaceship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.AddForce(new Vector2(Input.GetAxis("Horizontal")*speed,0));
-        rb.AddForce(new Vector2(0,Input.GetAxis("Vertical") * speed));
+        rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed, 0));
+        rb.AddForce(new Vector2(0, Input.GetAxis("Vertical") * speed));
         // anim.SetBool("Moving", true);
         anim.SetInteger("State", (int)state); //sets animation based on enuemrator state */
-        if (Input.GetKey(KeyCode.Space)&&delay>10)
+        if (Input.GetKey(KeyCode.Space) && delay > 10)
         {
             Shoot();
 
-            
+
         }
 
         delay++;
         AnimationState();
-        
+
     }
     public void Damage()
     {
         StartCoroutine(Blink());
         health--;
         PlayerPrefs.SetInt("Health", health);
-        if (health ==0)
+        if (health == 0)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
-            Destroy(gameObject,0.1f);
+            Destroy(gameObject, 0.1f);
         }
         IEnumerator Blink()
         {
@@ -71,41 +75,44 @@ public class Spaceship : MonoBehaviour
     void Shoot()
     {
         delay = 0;
-       // Blue_bullet.gameObject.SetActive(true);
-        Debug.Log(Blue_bullet.activeInHierarchy);
-        if (Blue_bullet.activeSelf== true)
-        {
-            
-            
-            bullet = Blue_bullet;
-            Debug.Log(Green_Bullet.activeInHierarchy);
-        }
+
+
+
+
+
+
+         
         
-        else if (Green_Bullet.activeSelf == true)
-        {
-            Blue_bullet.SetActive(false);
-           // Blue_bullet.gameObject.SetActive = false;
-
-
-            Green_Bullet.SetActive(true);
-            bullet = Green_Bullet;
         
 
-            
-           
-        }
-        else if (Purple_Bullet.activeSelf == true)
+        switch (bulletType)
         {
-            bullet = Purple_Bullet;
+            case BulletType.Normal:
+                bullet = bullet.gameObject;
+                break;
+
+            case BulletType.blue:
+                bullet = Blue_bullet;
+                break;
+
+            case BulletType.Green:
+                bullet = Green_Bullet;
+                break;
+            case BulletType.purple:
+                break;
+                
+            default:
+                bullet = bullet.gameObject;
+
+                break;
         }
 
-            Instantiate(bullet, a.transform.position, Quaternion.identity);
+        Instantiate(bullet, a.transform.position, Quaternion.identity);
         Instantiate(bullet, b.transform.position, Quaternion.identity);
-        
 
-        
+
     }
-    
+
     public void AddHealth()
     {
         health++;
@@ -117,15 +124,15 @@ public class Spaceship : MonoBehaviour
         {
             state = State.idle;
         }
-    
-         else if(Mathf.Abs(rb.velocity.x) > 2f)
+
+        else if (Mathf.Abs(rb.velocity.x) > 2f)
         {
             //Moving
             state = State.Moving;
         }
-    else
-{
-    state = State.idle;
-}
-    } 
+        else
+        {
+            state = State.idle;
+        }
+    }
 }
