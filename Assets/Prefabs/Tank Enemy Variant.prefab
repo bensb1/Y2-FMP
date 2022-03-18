@@ -16,6 +16,10 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1037503123, guid: 65694fcf3e74a55448107288f4dab36e, type: 3}
+      propertyPath: coins
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037503123, guid: 65694fcf3e74a55448107288f4dab36e, type: 3}
       propertyPath: score
       value: 250
       objectReference: {fileID: 0}

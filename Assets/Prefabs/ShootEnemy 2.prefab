@@ -111,6 +111,7 @@ MonoBehaviour:
   xSpeed: 0
   ySpeed: 2
   score: 150
+  coins: 1
   canShoot: 1
   fireRate: 3
   Health: 20

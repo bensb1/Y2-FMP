@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 
    public float xSpeed,ySpeed;
     public int score;
+    public int coins;
     public bool canShoot;
     public float fireRate;
     public float Health;
@@ -54,6 +55,12 @@ public class Enemy : MonoBehaviour
             Instantiate(Extralife, transform.position, Quaternion.identity);
         }
         PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
+        PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + coins);
+        
+        
+            
+        
+
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
