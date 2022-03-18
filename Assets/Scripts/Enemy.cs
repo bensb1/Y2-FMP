@@ -66,9 +66,11 @@ public class Enemy : MonoBehaviour
     }
    public void Damage()
     {
-        // Health--;
-
-        if (Blue_bullet.activeSelf == true)
+        if (bullet.gameObject == true)
+        {
+            Health--;
+        }
+       else if (Blue_bullet.gameObject == true)
         {
            
             

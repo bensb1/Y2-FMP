@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ShopControl : MonoBehaviour
 {
-    int moneyAmount;
+    int Coins;
     int isBluebulletSold;
 
     public Text moneyAmountText;
@@ -14,13 +14,13 @@ public class ShopControl : MonoBehaviour
     public Button buyButton;
     private void Start()
     {
-        moneyAmount = PlayerPrefs.GetInt("MoneyAmount");
+        Coins = PlayerPrefs.GetInt("Coins");
     }
     private void Update()
     {
-        moneyAmountText.text = "Money:" + moneyAmount.ToString() + "$";
+        moneyAmountText.text = "Money:" + Coins.ToString() + "$";
         isBluebulletSold = PlayerPrefs.GetInt("isBluebulletSold");
-        if (moneyAmount >= 100 && isBluebulletSold == 0)
+        if (Coins >= 8 && isBluebulletSold == 0)
         {
             buyButton.interactable = true;
 
@@ -32,16 +32,25 @@ public class ShopControl : MonoBehaviour
     }
     public void buyBluebullet()
     {
-        moneyAmount -= 100;
+
+        Coins -= 8;
+        PlayerPrefs.SetInt("Coins", Coins);
+
         PlayerPrefs.SetInt("isBluebulletSold", 1);
         BluebulletPrice.text = "Sold!";
         buyButton.gameObject.SetActive(false);
+        
+        
     }
     public void resetPlayerPrefs()
     {
-        moneyAmount = 0;
+        Coins = 0;
         buyButton.gameObject.SetActive(true);
         BluebulletPrice.text = "Price: 100$";
-        PlayerPrefs.DeleteAll();
+         PlayerPrefs.DeleteAll();
+    }
+    public void exitButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 }
