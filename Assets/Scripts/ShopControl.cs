@@ -8,11 +8,15 @@ public class ShopControl : MonoBehaviour
 {
     int Coins;
     int isBluebulletSold;
+    int isGreenbulletSold;
 
     public Text moneyAmountText;
-    public Text BluebulletPrice;
+    public Text BluebulletPrice,GreenbulletPrice;
     public Button buyButton;
+    public Button buyButtonGreen;
+        public Button buyButtonPurple;
     public GameObject Bluebullet;
+
     private void Start()
     {
 
@@ -22,6 +26,7 @@ public class ShopControl : MonoBehaviour
     {
         moneyAmountText.text = "Money:" + Coins.ToString() + "$";
         isBluebulletSold = PlayerPrefs.GetInt("isBluebulletSold");
+        isBluebulletSold = PlayerPrefs.GetInt("isGreenbulletSold");
         if (Coins >= 8 && isBluebulletSold == 0)
         {
             buyButton.interactable = true;
@@ -30,6 +35,15 @@ public class ShopControl : MonoBehaviour
         else
         {
             buyButton.interactable = false;
+        }
+        if (Coins >= 1 && isGreenbulletSold ==0)
+        {
+            buyButtonGreen.interactable = true;
+              
+        }
+        else
+        {
+            buyButtonGreen.interactable = false;
         }
     }
     public void buyBluebullet()
@@ -41,8 +55,11 @@ public class ShopControl : MonoBehaviour
         PlayerPrefs.SetInt("isBluebulletSold", 1);
         BluebulletPrice.text = "Sold!";
         buyButton.gameObject.SetActive(false);
+        
         Spaceship ship = GameObject.Find("Player").GetComponent<Spaceship>();
+        ship.Blue_bullet.SetActive(true);
         ship.bulletType = Spaceship.BulletType.blue;
+        
 
 
 
@@ -58,4 +75,37 @@ public class ShopControl : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
+    public void buyGreenBullet()
+    {
+
+        Coins -=1;
+        PlayerPrefs.SetInt("Coins", Coins);
+
+        PlayerPrefs.SetInt("isGreenbulletSold", 1);
+        GreenbulletPrice.text = "Sold!";
+        buyButtonGreen.gameObject.SetActive(false);
+        Spaceship ship = GameObject.Find("Player").GetComponent<Spaceship>();
+        ship.bulletType = Spaceship.BulletType.Green;
+
+
+
+
+    }
+    public void buyPurpleBullet()
+    {
+
+        Coins -= 1;
+        PlayerPrefs.SetInt("Coins", Coins);
+
+        PlayerPrefs.SetInt("isGreenbulletSold", 1);
+        GreenbulletPrice.text = "Sold!";
+        buyButtonGreen.gameObject.SetActive(false);
+        Spaceship ship = GameObject.Find("Player").GetComponent<Spaceship>();
+        ship.bulletType = Spaceship.BulletType.Green;
+
+
+
+
+    }
+
 }

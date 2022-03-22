@@ -92,6 +92,7 @@ public class Spaceship : MonoBehaviour
                 break;
 
             case BulletType.blue:
+                Blue_bullet.gameObject.SetActive(true);
                 bullet = Blue_bullet;
                 break;
 
