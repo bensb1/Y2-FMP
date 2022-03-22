@@ -20,6 +20,10 @@ public class Spaceship : MonoBehaviour
     Rigidbody2D rb;
     public float speed;
     int health = 3;
+    private float timer = 0f;
+    private float waitTimer = 2f;
+    private Fuel fuelBar;
+    private GameObject oxygenTank;
     private void Awake()
     {
 
@@ -31,7 +35,7 @@ public class Spaceship : MonoBehaviour
     private void Start()
     {
 
-
+        fuelBar = GameObject.Find("oxygenBar").GetComponent<Fuel>();
         PlayerPrefs.SetInt("Health", health);
     }
     // Start is called before the first frame update
@@ -41,7 +45,21 @@ public class Spaceship : MonoBehaviour
     void Update()
     {
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed, 0));
+        if (timer > waitTimer)
+        {
+            Debug.Log(timer);
+            fuelBar.UseFuel(5);
+
+            timer = 0;
+        }
         rb.AddForce(new Vector2(0, Input.GetAxis("Vertical") * speed));
+        if (timer > waitTimer)
+        {
+            Debug.Log(timer);
+            fuelBar.UseFuel(5);
+
+            timer = 0;
+        }
         // anim.SetBool("Moving", true);
         anim.SetInteger("State", (int)state); //sets animation based on enuemrator state */
         if (Input.GetKey(KeyCode.Space) && delay > 10)
