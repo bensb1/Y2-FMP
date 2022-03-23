@@ -157,6 +157,11 @@ public class Spaceship : MonoBehaviour
 
                 timer = 0;
             }
+            speed = 4f;
+        }
+        if(!Input.GetKey(KeyCode.B))
+        {
+            speed = 2f;
         }
                     
 
