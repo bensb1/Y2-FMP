@@ -46,7 +46,7 @@ public class Spaceship : MonoBehaviour
     {
         timer += Time.deltaTime;
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed, 0));
-        Debug.Log(timer);
+        
         Boost();
 
         rb.AddForce(new Vector2(0, Input.GetAxis("Vertical") * speed));
