@@ -17,10 +17,7 @@ public class Fuel : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
+ 
     public void fuelReset()
     {
 

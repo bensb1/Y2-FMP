@@ -21,8 +21,8 @@ public class Spaceship : MonoBehaviour
     public float speed;
     int health = 3;
     private float timer = 0f;
-    private float waitTimer = 2f;
-    private Fuel fuelBar;
+    private float waitTimer =2f;
+    private Fuel Fuel;
     private GameObject oxygenTank;
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class Spaceship : MonoBehaviour
     private void Start()
     {
 
-        fuelBar = GameObject.Find("FuelBar").GetComponent<Fuel>();
+        Fuel = GameObject.Find("FuelBar").GetComponent<Fuel>();
         PlayerPrefs.SetInt("Health", health);
     }
     // Start is called before the first frame update
@@ -44,11 +44,13 @@ public class Spaceship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed, 0));
+        Debug.Log(timer);
         if (timer > waitTimer)
         {
-            Debug.Log(timer);
-            fuelBar.UseFuel(5);
+            
+            Fuel.UseFuel(5);
 
             timer = 0;
         }
@@ -56,7 +58,7 @@ public class Spaceship : MonoBehaviour
         if (timer > waitTimer)
         {
             Debug.Log(timer);
-            fuelBar.UseFuel(5);
+            Fuel.UseFuel(5);
 
             timer = 0;
         }
