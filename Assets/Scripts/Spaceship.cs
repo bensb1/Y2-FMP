@@ -15,13 +15,13 @@ public class Spaceship : MonoBehaviour
     public GameObject Green_Bullet;
     public GameObject Purple_Bullet;
     // public int bulletType = 1;
-     public enum  BulletType { Normal,Green,blue,purple }; 
-   public BulletType bulletType = BulletType.Normal;
+    public enum BulletType { Normal, Green, blue, purple };
+    public BulletType bulletType = BulletType.Normal;
     Rigidbody2D rb;
     public float speed;
     int health = 3;
     private float timer = 0f;
-    private float waitTimer =2f;
+    private float waitTimer = 2f;
     private Fuel Fuel;
     private GameObject oxygenTank;
     private void Awake()
@@ -47,21 +47,10 @@ public class Spaceship : MonoBehaviour
         timer += Time.deltaTime;
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed, 0));
         Debug.Log(timer);
-        if (timer > waitTimer)
-        {
-            
-            Fuel.UseFuel(5);
+        Boost();
 
-            timer = 0;
-        }
         rb.AddForce(new Vector2(0, Input.GetAxis("Vertical") * speed));
-        if (timer > waitTimer)
-        {
-            Debug.Log(timer);
-            Fuel.UseFuel(5);
-
-            timer = 0;
-        }
+        Boost();
         // anim.SetBool("Moving", true);
         anim.SetInteger("State", (int)state); //sets animation based on enuemrator state */
         if (Input.GetKey(KeyCode.Space) && delay > 10)
@@ -101,9 +90,9 @@ public class Spaceship : MonoBehaviour
 
 
 
-         
-        
-        
+
+
+
 
         switch (bulletType)
         {
@@ -121,7 +110,7 @@ public class Spaceship : MonoBehaviour
                 break;
             case BulletType.purple:
                 break;
-                
+
             default:
                 bullet = bullet.gameObject;
 
@@ -155,5 +144,21 @@ public class Spaceship : MonoBehaviour
         {
             state = State.idle;
         }
+    }
+    public void Boost()
+    {
+        if (Input.GetKey(KeyCode.B))
+
+        {
+            if (timer > waitTimer)
+            {
+
+                Fuel.UseFuel(10);
+
+                timer = 0;
+            }
+        }
+                    
+
     }
 }
