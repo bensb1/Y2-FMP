@@ -35,7 +35,7 @@ public class Spaceship : MonoBehaviour
     private void Start()
     {
 
-        fuelBar = GameObject.Find("oxygenBar").GetComponent<Fuel>();
+        fuelBar = GameObject.Find("FuelBar").GetComponent<Fuel>();
         PlayerPrefs.SetInt("Health", health);
     }
     // Start is called before the first frame update

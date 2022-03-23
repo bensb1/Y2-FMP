@@ -21,7 +21,7 @@ public class Fuel : MonoBehaviour
     {
 
     }
-    public void OxygenReset()
+    public void fuelReset()
     {
 
         currentFuel = maxFuel;

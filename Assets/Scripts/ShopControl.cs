@@ -16,6 +16,7 @@ public class ShopControl : MonoBehaviour
     public Button buyButtonGreen;
         public Button buyButtonPurple;
     public GameObject Bluebullet;
+    private GameObject Player;
 
     private void Start()
     {
