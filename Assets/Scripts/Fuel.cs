@@ -12,15 +12,15 @@ public class Fuel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-      
+
+
         currentFuel = maxFuel;
         slider.maxValue = maxFuel;
         slider.value = maxFuel;
     }
 
     // Update is called once per frame
- 
+
     public void fuelReset()
     {
 
@@ -42,5 +42,5 @@ public class Fuel : MonoBehaviour
         }
     }
 
-    }
 }
+

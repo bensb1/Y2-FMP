@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum BulletType { Normal, Green, blue, purple };
 public class Spaceship : MonoBehaviour
 {
 
@@ -15,7 +15,7 @@ public class Spaceship : MonoBehaviour
     public GameObject Green_Bullet;
     public GameObject Purple_Bullet;
     // public int bulletType = 1;
-    public enum BulletType { Normal, Green, blue, purple };
+    
     public BulletType bulletType = BulletType.Normal;
     Rigidbody2D rb;
     public float speed;
@@ -34,6 +34,7 @@ public class Spaceship : MonoBehaviour
     }
     private void Start()
     {
+         bulletType = (BulletType) PlayerPrefs.GetInt("playerWithBullet") ;
 
         Fuel = GameObject.Find("FuelBar").GetComponent<Fuel>();
         PlayerPrefs.SetInt("Health", health);

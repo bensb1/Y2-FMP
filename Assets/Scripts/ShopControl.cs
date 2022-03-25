@@ -16,7 +16,8 @@ public class ShopControl : MonoBehaviour
     public Button buyButtonGreen;
         public Button buyButtonPurple;
     public GameObject Bluebullet;
-    private GameObject Player;
+    
+    
 
     private void Start()
     {
@@ -56,10 +57,11 @@ public class ShopControl : MonoBehaviour
         PlayerPrefs.SetInt("isBluebulletSold", 1);
         BluebulletPrice.text = "Sold!";
         buyButton.gameObject.SetActive(false);
+      
         
-        Spaceship ship = GameObject.Find("Player").GetComponent<Spaceship>();
-        ship.Blue_bullet.SetActive(true);
-        ship.bulletType = Spaceship.BulletType.blue;
+        
+         PlayerPrefs.SetInt("playerWithullet",( int) BulletType.blue );
+        
         
 
 
@@ -85,8 +87,9 @@ public class ShopControl : MonoBehaviour
         PlayerPrefs.SetInt("isGreenbulletSold", 1);
         GreenbulletPrice.text = "Sold!";
         buyButtonGreen.gameObject.SetActive(false);
-        Spaceship ship = GameObject.Find("Player").GetComponent<Spaceship>();
-        ship.bulletType = Spaceship.BulletType.Green;
+
+       
+       
 
 
 
@@ -101,8 +104,7 @@ public class ShopControl : MonoBehaviour
         PlayerPrefs.SetInt("isGreenbulletSold", 1);
         GreenbulletPrice.text = "Sold!";
         buyButtonGreen.gameObject.SetActive(false);
-        Spaceship ship = GameObject.Find("Player").GetComponent<Spaceship>();
-        ship.bulletType = Spaceship.BulletType.Green;
+       
 
 
 
