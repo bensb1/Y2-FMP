@@ -12,6 +12,7 @@ public class Fuel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemy = GameObject.Find("ShootEnemy 2").GetComponent<Enemy>();
         currentFuel = maxFuel;
         slider.maxValue = maxFuel;
         slider.value = maxFuel;

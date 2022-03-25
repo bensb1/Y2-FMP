@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     private Fuel fuel;
     private void Awake()
     {
-        Fuel fuel = GameObject.Find("FuelBar").GetComponent<Fuel>();
+        fuel = GameObject.Find("FuelBar").GetComponent<Fuel>();
         rb = GetComponent<Rigidbody2D>();
        
         
