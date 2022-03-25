@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class Fuel : MonoBehaviour
 {
     public Slider slider;
-    private int maxFuel = 100;
-    private int currentFuel;
+    public int maxFuel = 100;
+    public int currentFuel;
     private Enemy enemy;
     // Start is called before the first frame update
     void Start()
     {
-        enemy = GameObject.Find("ShootEnemy 2").GetComponent<Enemy>();
+       
+      
         currentFuel = maxFuel;
         slider.maxValue = maxFuel;
         slider.value = maxFuel;
@@ -40,14 +41,6 @@ public class Fuel : MonoBehaviour
             slider.value = currentFuel;
         }
     }
-    public void Refill()
-    {
-        currentFuel = currentFuel + enemy.Refuel;
-        slider.value = currentFuel;
-        if (currentFuel >=100)
-        {
-            currentFuel = maxFuel;
-            slider.value = maxFuel;
-        }
+
     }
 }

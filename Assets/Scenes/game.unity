@@ -1454,6 +1454,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1018104768}
+  maxFuel: 100
+  currentFuel: 0
 --- !u!1 &1059463044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,7 +1846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1183995149378371527, guid: 7792f9e553599cc459d42ac207660cd5, type: 3}
       propertyPath: fireRate
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2351033230261465860, guid: 7792f9e553599cc459d42ac207660cd5, type: 3}
       propertyPath: m_Name
