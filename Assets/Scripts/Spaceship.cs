@@ -23,7 +23,7 @@ public class Spaceship : MonoBehaviour
     private float timer = 0f;
     private float waitTimer = 2f;
     private Fuel Fuel;
-    private GameObject oxygenTank;
+    
     private void Awake()
     {
 

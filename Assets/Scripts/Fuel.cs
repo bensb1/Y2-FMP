@@ -8,6 +8,7 @@ public class Fuel : MonoBehaviour
     public Slider slider;
     private int maxFuel = 100;
     private int currentFuel;
+    private Enemy enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,16 @@ public class Fuel : MonoBehaviour
         {
             currentFuel -= amount;
             slider.value = currentFuel;
+        }
+    }
+    public void Refill()
+    {
+        currentFuel = currentFuel + enemy.Refuel;
+        slider.value = currentFuel;
+        if (currentFuel >=100)
+        {
+            currentFuel = maxFuel;
+            slider.value = maxFuel;
         }
     }
 }

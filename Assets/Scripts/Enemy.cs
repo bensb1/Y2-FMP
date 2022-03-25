@@ -16,8 +16,11 @@ public class Enemy : MonoBehaviour
     public bool canShoot;
     public float fireRate;
     public float Health;
+    public int Refuel = 20;
+    private Fuel fuel;
     private void Awake()
     {
+        Fuel fuel = GameObject.Find("FuelBar").GetComponent<Fuel>();
         rb = GetComponent<Rigidbody2D>();
        
         
@@ -56,6 +59,7 @@ public class Enemy : MonoBehaviour
         }
         PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + score);
         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + coins);
+      
         
         
             
@@ -63,6 +67,7 @@ public class Enemy : MonoBehaviour
 
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        fuel.Refill();
     }
    public void Damage()
     {
