@@ -60,7 +60,7 @@ public class ShopControl : MonoBehaviour
       
         
         
-         PlayerPrefs.SetInt("playerWithullet",( int) BulletType.blue );
+         PlayerPrefs.SetInt("playerWithBullet",( int) BulletType.blue );
         
         
 

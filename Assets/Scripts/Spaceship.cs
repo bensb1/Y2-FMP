@@ -35,6 +35,7 @@ public class Spaceship : MonoBehaviour
     private void Start()
     {
          bulletType = (BulletType) PlayerPrefs.GetInt("playerWithBullet") ;
+        Debug.Log(bulletType);
 
         Fuel = GameObject.Find("FuelBar").GetComponent<Fuel>();
         PlayerPrefs.SetInt("Health", health);
@@ -45,6 +46,7 @@ public class Spaceship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         timer += Time.deltaTime;
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed, 0));
         
