@@ -820,7 +820,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 50
 --- !u!222 &464497210
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1113,7 +1113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1046375428}
   m_Layer: 0
-  m_Name: ShopItemTemplate (2)
+  m_Name: greenBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1223,7 +1223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1235369983}
   m_Layer: 0
-  m_Name: ShopItemTemplate (1)
+  m_Name: blueBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1258,7 +1258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1331719692}
   m_Layer: 0
-  m_Name: ShopItemTemplate (3)
+  m_Name: purpleBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1655,7 +1655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyAmountText: {fileID: 275126920}
   BluebulletPrice: {fileID: 464497209}
-  GreenbulletPrice: {fileID: 0}
+  GreenbulletPrice: {fileID: 2045215286}
   buyButton: {fileID: 163108967}
   buyButtonGreen: {fileID: 1837243753}
   buyButtonPurple: {fileID: 0}
@@ -2600,7 +2600,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 250
 --- !u!222 &2045215287
 CanvasRenderer:
   m_ObjectHideFlags: 0

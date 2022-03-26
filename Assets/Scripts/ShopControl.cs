@@ -9,6 +9,7 @@ public class ShopControl : MonoBehaviour
     int Coins;
     int isBluebulletSold;
     int isGreenbulletSold;
+    int isPurplebulletSold;
 
     public Text moneyAmountText;
     public Text BluebulletPrice,GreenbulletPrice;
@@ -28,8 +29,9 @@ public class ShopControl : MonoBehaviour
     {
         moneyAmountText.text = "Money:" + Coins.ToString() + "$";
         isBluebulletSold = PlayerPrefs.GetInt("isBluebulletSold");
-        isBluebulletSold = PlayerPrefs.GetInt("isGreenbulletSold");
-        if (Coins >= 8 && isBluebulletSold == 0)
+        isGreenbulletSold = PlayerPrefs.GetInt("isGreenbulletSold");
+        isPurplebulletSold = PlayerPrefs.GetInt("isPurplebulletSold");
+        if (Coins >= 50 && isBluebulletSold == 0)
         {
             buyButton.interactable = true;
 
@@ -38,7 +40,7 @@ public class ShopControl : MonoBehaviour
         {
             buyButton.interactable = false;
         }
-        if (Coins >= 1 && isGreenbulletSold ==0)
+        if (Coins >= 250 && isGreenbulletSold ==0)
         {
             buyButtonGreen.interactable = true;
               
@@ -47,11 +49,20 @@ public class ShopControl : MonoBehaviour
         {
             buyButtonGreen.interactable = false;
         }
+        if (Coins >= 350 && isPurplebulletSold == 0)
+        {
+            buyButtonPurple.interactable = true;
+
+        }
+        else
+        {
+            buyButtonPurple.interactable = false;
+        }
     }
     public void buyBluebullet()
     {
 
-        Coins -= 8;
+        Coins -= 50;
         PlayerPrefs.SetInt("Coins", Coins);
 
         PlayerPrefs.SetInt("isBluebulletSold", 1);
@@ -81,15 +92,16 @@ public class ShopControl : MonoBehaviour
     public void buyGreenBullet()
     {
 
-        Coins -=1;
+        Coins -=250;
         PlayerPrefs.SetInt("Coins", Coins);
 
         PlayerPrefs.SetInt("isGreenbulletSold", 1);
         GreenbulletPrice.text = "Sold!";
         buyButtonGreen.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("playerWithBullet", (int)BulletType.Green);
 
-       
-       
+
+
 
 
 
@@ -101,10 +113,11 @@ public class ShopControl : MonoBehaviour
         Coins -= 1;
         PlayerPrefs.SetInt("Coins", Coins);
 
-        PlayerPrefs.SetInt("isGreenbulletSold", 1);
+        PlayerPrefs.SetInt("isPurplebulletSold", 1);
         GreenbulletPrice.text = "Sold!";
-        buyButtonGreen.gameObject.SetActive(false);
-       
+        buyButtonPurple.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("playerWithBullet", (int)BulletType.purple);
+
 
 
 
