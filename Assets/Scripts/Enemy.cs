@@ -18,9 +18,11 @@ public class Enemy : MonoBehaviour
     public float Health;
     public int Refuel = 20;
     private Fuel fuel;
+    private Spaceship spaceship;
     private void Awake()
     {
         fuel = GameObject.Find("FuelBar").GetComponent<Fuel>();
+
         rb = GetComponent<Rigidbody2D>();
 
 
@@ -29,7 +31,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        spaceship = GameObject.Find("Player").GetComponent<Spaceship>();
+        
 
         if (!canShoot) return;
         {
@@ -72,29 +75,28 @@ public class Enemy : MonoBehaviour
     }
     public void Damage()
     {
-        if (bullet.gameObject == true)
+        if (spaceship.bullet.gameObject == spaceship.bullet.gameObject)
         {
             Health--;
         }
-        else if (Blue_bullet.gameObject == true)
+        if (spaceship.bullet == spaceship.Blue_bullet)
         {
 
 
             Health = Health - 2;
+            Debug.Log(Health);
 
         }
 
-        else if (Green_Bullet.activeSelf == true)
+        if (spaceship.bullet == spaceship.Green_Bullet)
         {
 
             Health = Health - 4;
             Debug.Log(Health);
         }
-        else if (Purple_Bullet.activeSelf == true)
+         if (spaceship.bullet == spaceship.Purple_Bullet)
         {
-            Blue_bullet.SetActive(false);
-            Green_Bullet.SetActive(false);
-            Purple_Bullet.SetActive(true);
+            
             Health = Health - 5;
         }
 

@@ -32,7 +32,7 @@ public class DeathManager : MonoBehaviour
     }
     IEnumerator LoadGameOver()
     {
-        yield return new WaitForSeconds(3f);
+         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -74,6 +74,7 @@ public class Spaceship : MonoBehaviour
         PlayerPrefs.SetInt("Health", health);
         if (health == 0)
         {
+            Destroy(this);
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject, 0.1f);
         }

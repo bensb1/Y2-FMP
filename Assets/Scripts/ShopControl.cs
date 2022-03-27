@@ -12,7 +12,7 @@ public class ShopControl : MonoBehaviour
     int isPurplebulletSold;
 
     public Text moneyAmountText;
-    public Text BluebulletPrice,GreenbulletPrice;
+    public Text BluebulletPrice,GreenbulletPrice,PurplebulletPrice;
     public Button buyButton;
     public Button buyButtonGreen;
         public Button buyButtonPurple;
