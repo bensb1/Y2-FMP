@@ -75,10 +75,11 @@ public class Enemy : MonoBehaviour
     }
     public void Damage()
     {
-        if (spaceship.bullet.gameObject == spaceship.bullet.gameObject)
+  /*      if (spaceship.bullet.gameObject == spaceship.bullet.gameObject)
         {
             Health--;
         }
+  */
         if (spaceship.bullet == spaceship.Blue_bullet)
         {
 
@@ -86,6 +87,10 @@ public class Enemy : MonoBehaviour
             Health = Health - 2;
             Debug.Log(Health);
 
+        }
+        else
+        {
+            Health--;
         }
 
         if (spaceship.bullet == spaceship.Green_Bullet)
