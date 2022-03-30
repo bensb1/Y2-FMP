@@ -113,6 +113,7 @@ public class Spaceship : MonoBehaviour
                 bullet = Green_Bullet;
                 break;
             case BulletType.purple:
+                bullet = Purple_Bullet;
                 break;
 
             default:

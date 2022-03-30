@@ -1024,7 +1024,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1628053367}
         m_TargetAssemblyTypeName: ShopControl, Assembly-CSharp
-        m_MethodName: buyBluebullet
+        m_MethodName: buyPurpleBullet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

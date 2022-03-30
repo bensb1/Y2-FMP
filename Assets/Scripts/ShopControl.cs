@@ -110,11 +110,11 @@ public class ShopControl : MonoBehaviour
     public void buyPurpleBullet()
     {
 
-        Coins -= 1;
+        Coins -= 350;
         PlayerPrefs.SetInt("Coins", Coins);
 
         PlayerPrefs.SetInt("isPurplebulletSold", 1);
-        GreenbulletPrice.text = "Sold!";
+        PurplebulletPrice.text = "Sold!";
         buyButtonPurple.gameObject.SetActive(false);
         PlayerPrefs.SetInt("playerWithBullet", (int)BulletType.purple);
 
