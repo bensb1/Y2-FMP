@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1211502615}
+    - target: {fileID: 36211129558851551, guid: fcf8c41deef249f4ab49d242db3a3945, type: 3}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcf8c41deef249f4ab49d242db3a3945, type: 3}
 --- !u!1001 &622175200

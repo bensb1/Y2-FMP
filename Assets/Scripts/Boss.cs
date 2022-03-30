@@ -7,8 +7,8 @@ public class Boss : MonoBehaviour
 {
    
      public Slider slider;
-    public int maxHealth = 100;
-    public int currentHealth;
+    public int maxHealth = 1000;
+    private float currentHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class Boss : MonoBehaviour
     public void Damage()
     {
         
-        currentHealth = currentHealth - 1;
+        currentHealth = currentHealth - 0.5f;
         slider.value = currentHealth;
         Debug.Log(slider.value);
 
