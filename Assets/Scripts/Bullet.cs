@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
- 
+
     // Start is called before the first frame update
     public void ChangeDirection()
     {
@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(0,12 * dir);
+        rb.velocity = new Vector2(0, 12 * dir);
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -37,15 +37,19 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        else {
-            {
-                if (col.gameObject.tag == "Player")
-                {
-                    col.gameObject.GetComponent<Spaceship>().Damage();
-                    Destroy(gameObject);
-                }
-            }
+        else if (col.gameObject.tag == "Player")
+        {
+            col.gameObject.GetComponent<Spaceship>().Damage();
+            Destroy(gameObject);
         }
-        
+        else if (col.gameObject.tag == "Boss")
+        {
+            col.gameObject.GetComponent<Boss>().Damage();
+
+        }
     }
+
 }
+
+
+
