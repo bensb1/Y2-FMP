@@ -168,6 +168,10 @@ public class Spaceship : MonoBehaviour
         {
             speed = 2f;
         }
+        else
+        {
+            Fuel.fuelEmpty();
+        }
                     
 
     }

@@ -50,6 +50,7 @@ public class Bullet : MonoBehaviour
         if(col.gameObject.tag == "Boss")
         {
             col.gameObject.GetComponent<Boss>().Damage();
+            Destroy(gameObject);
         }
         
     }

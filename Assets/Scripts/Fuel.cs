@@ -9,10 +9,11 @@ public class Fuel : MonoBehaviour
     public int maxFuel = 100;
     public int currentFuel;
     private Enemy enemy;
+    private Spaceship spaceship;
     // Start is called before the first frame update
     void Start()
     {
-
+        spaceship = GameObject.Find("Player").GetComponent<Spaceship>();
 
         currentFuel = maxFuel;
         slider.maxValue = maxFuel;
@@ -39,6 +40,17 @@ public class Fuel : MonoBehaviour
         {
             currentFuel -= amount;
             slider.value = currentFuel;
+        }
+     else
+        {
+            fuelEmpty();
+        }
+    }
+    public void fuelEmpty()
+    {
+        if (currentFuel <= 0)
+        {
+            spaceship.speed = 2f;
         }
     }
 
