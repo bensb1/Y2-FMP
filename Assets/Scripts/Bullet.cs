@@ -37,19 +37,15 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        else if (col.gameObject.tag == "Player")
-        {
-            col.gameObject.GetComponent<Spaceship>().Damage();
-            Destroy(gameObject);
+        else {
+            {
+                if (col.gameObject.tag == "Player")
+                {
+                    col.gameObject.GetComponent<Spaceship>().Damage();
+                    Destroy(gameObject);
+                }
+            }
         }
-        else if (col.gameObject.tag == "Boss")
-        {
-            col.gameObject.GetComponent<Boss>().Damage();
-
-        }
+        
     }
-
 }
-
-
-
