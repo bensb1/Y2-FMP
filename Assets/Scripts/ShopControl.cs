@@ -27,6 +27,7 @@ public class ShopControl : MonoBehaviour
     }
     private void Update()
     {
+      
         moneyAmountText.text = "Money:" + Coins.ToString() + "$";
         isBluebulletSold = PlayerPrefs.GetInt("isBluebulletSold");
         isGreenbulletSold = PlayerPrefs.GetInt("isGreenbulletSold");

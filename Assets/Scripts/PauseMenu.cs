@@ -45,7 +45,9 @@ public class PauseMenu : MonoBehaviour
     }
     public void Shop()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        Time.timeScale = 0f;
+        SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
+        
+       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 }
