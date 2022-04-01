@@ -9,6 +9,8 @@ public class Boss : MonoBehaviour
      public Slider slider;
     public int maxHealth = 1000;
     private float currentHealth;
+    public GameObject[] bossChild;
+    public Transform[] spawnPoints;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,8 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SpawnPoints();
        
-        
     }
     public void Damage()
     {
@@ -30,5 +32,14 @@ public class Boss : MonoBehaviour
         slider.value = currentHealth;
         Debug.Log(slider.value);
 
+    }
+    public void SpawnPoints()
+    {
+        if(currentHealth <= 500)
+        {
+            
+           // bossChild.Length.GetType(gameObject.SetActive(true));
+          //  Instantiate(bossChild, bossChild.transform.position, Quaternion.identity);
+        }
     }
 }
