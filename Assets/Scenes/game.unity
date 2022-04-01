@@ -2222,6 +2222,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1339234243, guid: bf4cf95fdf1eded46b05e7cf754d83ae, type: 3}
+      propertyPath: name
+      value: Health
+      objectReference: {fileID: 0}
     - target: {fileID: 1679683855, guid: bf4cf95fdf1eded46b05e7cf754d83ae, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

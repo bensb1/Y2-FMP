@@ -15,15 +15,16 @@ public class Spaceship : MonoBehaviour
     public GameObject Green_Bullet;
     public GameObject Purple_Bullet;
     // public int bulletType = 1;
-    
+
     public BulletType bulletType = BulletType.Normal;
     Rigidbody2D rb;
     public float speed;
-    int health = 3;
+    int startHealth = 3;
+    int currentHealth;
     private float timer = 0f;
     private float waitTimer = 2f;
     private Fuel Fuel;
-    
+
     private void Awake()
     {
 
@@ -34,11 +35,18 @@ public class Spaceship : MonoBehaviour
     }
     private void Start()
     {
-         bulletType = (BulletType) PlayerPrefs.GetInt("playerWithBullet") ;
+        bulletType = (BulletType)PlayerPrefs.GetInt("playerWithBullet");
         Debug.Log(bulletType);
 
         Fuel = GameObject.Find("FuelBar").GetComponent<Fuel>();
-        PlayerPrefs.SetInt("Health", health);
+        currentHealth = PlayerPrefs.GetInt("Health");
+        if (currentHealth <= 0)
+        {
+            PlayerPrefs.SetInt("Health", startHealth);
+            currentHealth = 3;
+        }
+
+
     }
     // Start is called before the first frame update
 
@@ -46,10 +54,10 @@ public class Spaceship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         timer += Time.deltaTime;
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed, 0));
-        
+
         Boost();
 
         rb.AddForce(new Vector2(0, Input.GetAxis("Vertical") * speed));
@@ -70,13 +78,14 @@ public class Spaceship : MonoBehaviour
     public void Damage()
     {
         StartCoroutine(Blink());
-        health--;
-        PlayerPrefs.SetInt("Health", health);
-        if (health == 0)
+        currentHealth--;
+        PlayerPrefs.SetInt("Health", currentHealth);
+        if (currentHealth == 0)
         {
             Destroy(this);
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject, 0.1f);
+            currentHealth = PlayerPrefs.GetInt("Health", startHealth);
         }
         IEnumerator Blink()
         {
@@ -130,8 +139,8 @@ public class Spaceship : MonoBehaviour
 
     public void AddHealth()
     {
-        health++;
-        PlayerPrefs.SetInt("Health", health);
+        currentHealth++;
+        PlayerPrefs.SetInt("Health", currentHealth);
     }
     private void AnimationState()
     {
@@ -164,7 +173,7 @@ public class Spaceship : MonoBehaviour
             }
             speed = 4f;
         }
-        if(!Input.GetKey(KeyCode.B))
+        if (!Input.GetKey(KeyCode.B))
         {
             speed = 2f;
         }
@@ -172,7 +181,7 @@ public class Spaceship : MonoBehaviour
         {
             Fuel.fuelEmpty();
         }
-                    
+
 
     }
 }
