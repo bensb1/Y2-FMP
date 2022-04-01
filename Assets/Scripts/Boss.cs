@@ -38,7 +38,7 @@ public class Boss : MonoBehaviour
         if(currentHealth <= 500)
         {
             
-           // bossChild.Length.GetType(gameObject.SetActive(true));
+            bossChild.Length.GetType(gameObject.SetActive(true));
           //  Instantiate(bossChild, bossChild.transform.position, Quaternion.identity);
         }
     }
