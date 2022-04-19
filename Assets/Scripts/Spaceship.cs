@@ -24,7 +24,7 @@ public class Spaceship : MonoBehaviour
     private float timer = 0f;
     private float waitTimer = 2f;
     private Fuel Fuel;
-
+    public AudioSource shootSoundEffect;
     private void Awake()
     {
 
@@ -96,6 +96,7 @@ public class Spaceship : MonoBehaviour
     }
     void Shoot()
     {
+        shootSoundEffect.Play();
         delay = 0;
 
 
