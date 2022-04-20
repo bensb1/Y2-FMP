@@ -70,6 +70,10 @@ public class Spaceship : MonoBehaviour
 
 
         }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            
+        }
 
         delay++;
         AnimationState();
