@@ -11,9 +11,14 @@ public class Boss : MonoBehaviour
     private float currentHealth;
     public GameObject[] bossChild;
     public Transform[] spawnPoints;
+    public float MovementSpeed = 15f;
+    private Rigidbody2D enemy;
+    public bool changeDirection = false;
+    
     // Start is called before the first frame update
     void Start()
     {
+        enemy = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         slider.maxValue = maxHealth;
         slider.value = maxHealth;
@@ -22,6 +27,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        enemyMovement();
         SpawnPoints();
        
     }
@@ -40,6 +46,30 @@ public class Boss : MonoBehaviour
             
          //   bossChild.Length.GetType(gameObject.SetActive(true));
           //  Instantiate(bossChild, bossChild.transform.position, Quaternion.identity);
+        }
+    }
+    public void enemyMovement()
+    {
+        if (changeDirection == true)
+        {
+            enemy.velocity = new Vector2(1, 0) * -1 * MovementSpeed;
+        }
+        else if (changeDirection == false)
+        {
+            enemy.velocity = new Vector2(1, 0) * MovementSpeed;
+        }
+    }
+    public void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.name == "RightWall")
+        {
+            Debug.Log("Hit the RightWall");
+            changeDirection = true;
+        }
+        if(col.gameObject.name == "LeftWall")
+        {
+            Debug.Log("Hit the LeftWall");
+            changeDirection = false;
         }
     }
 }
