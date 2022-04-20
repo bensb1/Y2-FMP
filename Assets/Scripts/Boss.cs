@@ -11,7 +11,7 @@ public class Boss : MonoBehaviour
     private float currentHealth;
     public GameObject[] bossChild;
     public Transform[] spawnPoints;
-    public float MovementSpeed = 15f;
+    public float MovementSpeed = 10f;
     private Rigidbody2D enemy;
     public bool changeDirection = false;
     
