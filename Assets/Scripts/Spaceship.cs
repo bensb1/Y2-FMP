@@ -14,6 +14,7 @@ public class Spaceship : MonoBehaviour
     public GameObject Blue_bullet;
     public GameObject Green_Bullet;
     public GameObject Purple_Bullet;
+    
     // public int bulletType = 1;
 
     public BulletType bulletType = BulletType.Normal;
@@ -25,12 +26,10 @@ public class Spaceship : MonoBehaviour
     private float waitTimer = 2f;
     private Fuel Fuel;
     public AudioSource shootSoundEffect;
-    public AudioSource BackgroundMusic1;
-    public AudioSource BackgroundMusic2;
+    
     private void Awake()
     {
-        BackgroundMusic1 = GetComponent<AudioSource>();
-
+        
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         a = transform.Find("a").gameObject;
@@ -80,7 +79,7 @@ public class Spaceship : MonoBehaviour
 
         delay++;
         AnimationState();
-        BackgroundMusic();
+       
 
     }
     public void Damage()
@@ -193,15 +192,5 @@ public class Spaceship : MonoBehaviour
 
 
     }
-    public void BackgroundMusic()
-    {
-        if (PlayerPrefs.GetInt("Score") < 1000)
-        {
-            BackgroundMusic1.Play();
-        }
-        else if (PlayerPrefs.GetInt("Score") >= 1000)
-        {
-            BackgroundMusic2.Play();
-        }
-    }
+
 }
