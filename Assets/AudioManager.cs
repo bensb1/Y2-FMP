@@ -8,41 +8,51 @@ public class AudioManager : MonoBehaviour
     public AudioClip Calm;
     public AudioClip DubStep;
     private int lastScore;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        lastScore = PlayerPrefs.GetInt("Score");
+
+
         Debug.Log(lastScore);
-        if (PlayerPrefs.GetInt("Score") == lastScore)
+        if (PlayerPrefs.GetInt("Score") != lastScore)
         {
             BackgroundMusic();
-        }       
-        
+        }
+        lastScore = PlayerPrefs.GetInt("Score");
     }
     public void BackgroundMusic()
     {
         AudioClip audioClip;
-       
+
+
         if (PlayerPrefs.GetInt("Score") < 1000)
         {
-            audioClip = Calm;
-            Backgroundmusic.clip = Calm; 
-            Backgroundmusic.Play();
+            if (Backgroundmusic.clip != Calm)
+            {
+                audioClip = Calm;
+                Backgroundmusic.clip = Calm;
+                Backgroundmusic.Play();
+            }
+
         }
-        else  
+        else
         {
-            Backgroundmusic.Stop();
-            audioClip = DubStep;
-            Backgroundmusic.clip = DubStep;
-            Backgroundmusic.Play();
+            if(Backgroundmusic.clip != DubStep)
+            {
+                Backgroundmusic.Stop();
+                audioClip = DubStep;
+                Backgroundmusic.clip = DubStep;
+                Backgroundmusic.Play();
+            }
+          
         }
     }
- 
+
 }
