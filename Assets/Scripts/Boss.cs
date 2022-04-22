@@ -14,6 +14,7 @@ public class Boss : MonoBehaviour
     public float MovementSpeed = 10f;
     private Rigidbody2D enemy;
     public bool changeDirection = false;
+    public GameObject bomb;
     
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class Boss : MonoBehaviour
     void Update()
     {
         enemyMovement();
+        
         SpawnPoints();
        
     }
@@ -72,4 +74,8 @@ public class Boss : MonoBehaviour
             changeDirection = false;
         }
     }
+    public void enemyAttacks()
+    {
+        Instantiate(bomb, bomb.transform.position, Quaternion.identity);
+    } 
 }
