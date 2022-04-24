@@ -15,10 +15,13 @@ public class Boss : MonoBehaviour
     private Rigidbody2D enemy;
     public bool changeDirection = false;
     public GameObject bomb;
+    private GameObject bomb_Postion;
     
     // Start is called before the first frame update
     void Start()
     {
+        bomb_Postion = transform.Find("bomb_postion").gameObject;
+    //    bomb = transform.Find("bomb_postion").gameObject;
         enemy = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         slider.maxValue = maxHealth;
@@ -29,7 +32,7 @@ public class Boss : MonoBehaviour
     void Update()
     {
         enemyMovement();
-        
+        enemyAttacks();
         SpawnPoints();
        
     }
@@ -76,6 +79,6 @@ public class Boss : MonoBehaviour
     }
     public void enemyAttacks()
     {
-        Instantiate(bomb, bomb.transform.position, Quaternion.identity);
+        Instantiate(bomb, bomb_Postion.transform.position, Quaternion.identity);
     } 
 }
