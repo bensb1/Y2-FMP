@@ -16,6 +16,9 @@ public class Boss : MonoBehaviour
     public bool changeDirection = false;
     public GameObject bomb;
     private GameObject bomb_Postion;
+    private float timer = 0f;
+    private float waitTimer = 2f;
+
     
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         enemyMovement();
         enemyAttacks();
         SpawnPoints();
@@ -79,6 +83,12 @@ public class Boss : MonoBehaviour
     }
     public void enemyAttacks()
     {
-        Instantiate(bomb, bomb_Postion.transform.position, Quaternion.identity);
+        if (timer > waitTimer)
+        {
+            Instantiate(bomb, bomb_Postion.transform.position, Quaternion.identity);
+            timer = 0;
+        }
+        
+
     } 
 }
