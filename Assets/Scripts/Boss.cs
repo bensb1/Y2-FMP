@@ -19,11 +19,13 @@ public class Boss : MonoBehaviour
     private float timer = 0f;
     private float waitTimer = 2f;
     public float speed = 5f;
+    public GameObject Bombclone;
 
     
     // Start is called before the first frame update
     void Start()
     {
+       // Bombclone = GameObject.Instantiate(bomb , Bombclone);
         bomb_Postion = transform.Find("bomb_postion").gameObject;
     //    bomb = transform.Find("bomb_postion").gameObject;
         enemy = GetComponent<Rigidbody2D>();
