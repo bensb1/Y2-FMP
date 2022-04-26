@@ -18,6 +18,7 @@ public class Boss : MonoBehaviour
     private GameObject bomb_Postion;
     private float timer = 0f;
     private float waitTimer = 2f;
+    public float speed = 5f;
 
     
     // Start is called before the first frame update
@@ -86,8 +87,15 @@ public class Boss : MonoBehaviour
         if (timer > waitTimer)
         {
             Instantiate(bomb, bomb_Postion.transform.position, Quaternion.identity);
+            
             timer = 0;
+            
+            
+
+            
         }
+      //  transform.Translate(0, speed * Time.deltaTime, 0);
+        bomb.transform.Translate(0,-0.01f, speed * Time.deltaTime, -0);
         
 
     } 
