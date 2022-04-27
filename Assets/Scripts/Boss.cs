@@ -19,16 +19,19 @@ public class Boss : MonoBehaviour
     private float timer = 0f;
     private float waitTimer = 2f;
     public float speed = 5f;
-   // public GameObject Bombclone;
+    public Sprite[] sprites;
+    private SpriteRenderer spriteRenderer;
+   
 
     
     // Start is called before the first frame update
     void Start()
     {
-       // Bombclone = GameObject.Instantiate(bomb);
-      //  Debug.Log(Bombclone);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+      
+      
         bomb_Postion = transform.Find("bomb_postion").gameObject;
-    //    bomb = transform.Find("bomb_postion").gameObject;
+    
         enemy = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         slider.maxValue = maxHealth;
@@ -42,6 +45,7 @@ public class Boss : MonoBehaviour
         enemyMovement();
         enemyAttacks();
         SpawnPoints();
+        enemyAnimation();
        
     }
     public void Damage()
@@ -58,7 +62,7 @@ public class Boss : MonoBehaviour
         {
             
          //   bossChild.Length.GetType(gameObject.SetActive(true));
-          //  Instantiate(bossChild, bossChild.transform.position, Quaternion.identity);
+             // Instantiate(bossChild, bossChild.position;
         }
     }
     public void enemyMovement()
@@ -106,12 +110,80 @@ public class Boss : MonoBehaviour
        // Bombclone.transform.Translate(0, speed * Time.deltaTime, 0);
 
         
-        if (GameObject.Find("bomb_0(Clone)"))
-        {
-             
-        }
+      
        
 
 
     } 
+    public void enemyAnimation()
+    {
+
+
+        if(currentHealth >=900)
+        {
+            spriteRenderer.sprite = sprites[0];
+        }
+        else if ( currentHealth >= 800)
+        {
+            spriteRenderer.sprite = sprites[1];
+        }
+        else if (currentHealth >=700)
+        {
+            spriteRenderer.sprite = sprites[2];
+        }
+        else if (currentHealth >= 600)
+        {
+            spriteRenderer.sprite = sprites[3];
+        }
+        else if (currentHealth >= 500)
+        {
+            spriteRenderer.sprite = sprites[4];
+
+        }
+        else if (currentHealth >= 400)
+        {
+            spriteRenderer.sprite = sprites[5];
+        }
+        else if (currentHealth >= 300)
+        {
+            spriteRenderer.sprite = sprites[6];
+        }
+        else if (currentHealth >= 200)
+        {
+            spriteRenderer.sprite = sprites[7];
+        }
+        else if (currentHealth >= 100)
+        {
+            spriteRenderer.sprite = sprites[8];
+        }
+        else if (currentHealth >= 1)
+        {
+            spriteRenderer.sprite = sprites[9];
+        }
+
+
+        /*  switch (currentHealth)
+          {
+              case currentHealth >= 900:
+                  spriteRenderer.sprite.name("Boss")
+                  break;
+
+              case BulletType.blue:
+                  Blue_bullet.gameObject.SetActive(true);
+                  bullet = Blue_bullet;
+                  break;
+
+              case BulletType.Green:
+                  bullet = Green_Bullet;
+                  break;
+              case BulletType.purple:
+                  bullet = Purple_Bullet;
+                  break;
+
+              default:
+                  bullet = bullet.gameObject;
+
+                  break;
+          } */
+    }
 }
