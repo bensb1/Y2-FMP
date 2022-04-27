@@ -19,13 +19,14 @@ public class Boss : MonoBehaviour
     private float timer = 0f;
     private float waitTimer = 2f;
     public float speed = 5f;
-    public GameObject Bombclone;
+   // public GameObject Bombclone;
 
     
     // Start is called before the first frame update
     void Start()
     {
-       // Bombclone = GameObject.Instantiate(bomb , Bombclone);
+       // Bombclone = GameObject.Instantiate(bomb);
+      //  Debug.Log(Bombclone);
         bomb_Postion = transform.Find("bomb_postion").gameObject;
     //    bomb = transform.Find("bomb_postion").gameObject;
         enemy = GetComponent<Rigidbody2D>();
@@ -88,17 +89,29 @@ public class Boss : MonoBehaviour
     {
         if (timer > waitTimer)
         {
+            bomb.SetActive(true);
             Instantiate(bomb, bomb_Postion.transform.position, Quaternion.identity);
             
+            
+            //    (Bombclone)
             timer = 0;
             
             
 
             
         }
-      //  transform.Translate(0, speed * Time.deltaTime, 0);
-        bomb.transform.Translate(0,-0.01f, speed * Time.deltaTime, -0);
+        //  transform.Translate(0, speed * Time.deltaTime, 0);
         
+        bomb.transform.Translate(0,-0.01f, speed * Time.deltaTime, -0);
+       // Bombclone.transform.Translate(0, speed * Time.deltaTime, 0);
+
+        
+        if (GameObject.Find("bomb_0(Clone)"))
+        {
+             
+        }
+       
+
 
     } 
 }
