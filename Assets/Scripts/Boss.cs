@@ -69,12 +69,14 @@ public class Boss : MonoBehaviour
     {
         if (changeDirection == true)
         {
-            enemy.velocity = new Vector2(1, 0) * -1 * MovementSpeed;
+            enemy.velocity = new Vector2(1 * (-1 * MovementSpeed), 0) ;
         }
         else if (changeDirection == false)
         {
-            enemy.velocity = new Vector2(1, 0) * MovementSpeed;
+            enemy.velocity = new Vector2(1 * MovementSpeed, 0);
         }
+
+        //enemy.velocity = Vector2.ClampMagnitude(enemy.velocity, MovementSpeed);
     }
     public void OnCollisionEnter2D(Collision2D col)
     {

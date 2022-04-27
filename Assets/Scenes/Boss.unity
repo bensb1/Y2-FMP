@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 36211129558851550, guid: fcf8c41deef249f4ab49d242db3a3945, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.93
+      value: 2.43
       objectReference: {fileID: 0}
     - target: {fileID: 36211129558851550, guid: fcf8c41deef249f4ab49d242db3a3945, type: 3}
       propertyPath: m_LocalPosition.z
@@ -671,7 +671,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -784,13 +784,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossHelath
       objectReference: {fileID: 0}
-    - target: {fileID: 1796811885918213090, guid: ae4c8e017c1f348428e311da4d3bad6e, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 1796811885236534759, guid: ae4c8e017c1f348428e311da4d3bad6e, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1796811885918213090, guid: ae4c8e017c1f348428e311da4d3bad6e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796811885918213090, guid: ae4c8e017c1f348428e311da4d3bad6e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae4c8e017c1f348428e311da4d3bad6e, type: 3}
@@ -1093,7 +1097,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215688, g: 0.4745098, b: 0.21556376, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
