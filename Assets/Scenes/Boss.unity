@@ -204,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 550078089}
     - target: {fileID: 36211129558851551, guid: fcf8c41deef249f4ab49d242db3a3945, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 36211129558851551, guid: fcf8c41deef249f4ab49d242db3a3945, type: 3}
       propertyPath: sprites.Array.size

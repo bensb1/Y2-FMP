@@ -7,7 +7,7 @@ public class Boss : MonoBehaviour
 {
    
      public Slider slider;
-    public int maxHealth = 1000;
+    public int maxHealth = 700;
     private float currentHealth;
     public GameObject[] bossChild;
     public Transform[] spawnPoints;
@@ -121,71 +121,50 @@ public class Boss : MonoBehaviour
     {
 
 
-        if(currentHealth >=900)
-        {
-            spriteRenderer.sprite = sprites[0];
-        }
-        else if ( currentHealth >= 800)
-        {
-            spriteRenderer.sprite = sprites[1];
-        }
-        else if (currentHealth >=700)
-        {
-            spriteRenderer.sprite = sprites[2];
-        }
-        else if (currentHealth >= 600)
-        {
-            spriteRenderer.sprite = sprites[3];
-        }
-        else if (currentHealth >= 500)
-        {
-            spriteRenderer.sprite = sprites[4];
-
-        }
-        else if (currentHealth >= 400)
-        {
-            spriteRenderer.sprite = sprites[5];
-        }
-        else if (currentHealth >= 300)
-        {
-            spriteRenderer.sprite = sprites[6];
-        }
-        else if (currentHealth >= 200)
-        {
-            spriteRenderer.sprite = sprites[7];
-        }
-        else if (currentHealth >= 100)
-        {
-            spriteRenderer.sprite = sprites[8];
-        }
-        else if (currentHealth >= 1)
-        {
-            spriteRenderer.sprite = sprites[9];
-        }
 
 
-        /*  switch (currentHealth)
+
+         switch (currentHealth)
           {
-              case currentHealth >= 900:
-                  spriteRenderer.sprite.name("Boss")
-                  break;
+            //case int n when(n >= 100):
+            case float currentHealth when (currentHealth >= 700):
+                  spriteRenderer.sprite = sprites[0];
+                break;
 
-              case BulletType.blue:
-                  Blue_bullet.gameObject.SetActive(true);
-                  bullet = Blue_bullet;
-                  break;
+            case float currentHealth when (currentHealth >= 600):
+                spriteRenderer.sprite = sprites[1];
 
-              case BulletType.Green:
-                  bullet = Green_Bullet;
-                  break;
-              case BulletType.purple:
-                  bullet = Purple_Bullet;
-                  break;
+                break;
 
-              default:
-                  bullet = bullet.gameObject;
+            case float currentHealth when (currentHealth >= 500):
+                spriteRenderer.sprite = sprites[2];
+                break;
+              case float currentHealth when (currentHealth >= 450):
+                spriteRenderer.sprite = sprites[3];
+                break;
+            case float currentHealth when (currentHealth >= 350):
+                spriteRenderer.sprite = sprites[4];
+                break;
+            case float currentHealth when (currentHealth >= 300):
+                spriteRenderer.sprite = sprites[5];
+                break;
+            case float currentHealth when (currentHealth >= 200):
+                spriteRenderer.sprite = sprites[6];
+                break;
+            case float currentHealth when (currentHealth >= 150):
+                spriteRenderer.sprite = sprites[7];
+                break;
+            case float currentHealth when (currentHealth >= 10):
+                spriteRenderer.sprite = sprites[8];
+                break;
+            case float currentHealth when (currentHealth >= 1):
+                spriteRenderer.sprite = sprites[9];
+                break;
 
-                  break;
-          } */
+            default:
+                spriteRenderer.sprite = sprites[0];
+
+                break;
+          } 
     }
 }
