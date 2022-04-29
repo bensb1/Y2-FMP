@@ -21,6 +21,7 @@ public class Boss : MonoBehaviour
     public float speed = 5f;
     public Sprite[] sprites;
     private SpriteRenderer spriteRenderer;
+    private GameObject boss;
    
 
     
@@ -28,6 +29,7 @@ public class Boss : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        boss = GetComponent<GameObject>();
       
       
         bomb_Postion = transform.Find("bomb_postion").gameObject;
@@ -159,6 +161,9 @@ public class Boss : MonoBehaviour
                 break;
             case float currentHealth when (currentHealth >= 1):
                 spriteRenderer.sprite = sprites[9];
+                break;
+            case float currentHealth when (currentHealth <= 0):
+                Destroy(this);
                 break;
 
             default:
