@@ -115,6 +115,7 @@ MonoBehaviour:
   canShoot: 1
   fireRate: 3
   Health: 20
+  Refuel: 5
 --- !u!1001 &3515615751812257270
 PrefabInstance:
   m_ObjectHideFlags: 0

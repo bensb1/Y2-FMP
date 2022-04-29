@@ -28,6 +28,10 @@ PrefabInstance:
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1037503123, guid: 65694fcf3e74a55448107288f4dab36e, type: 3}
+      propertyPath: Refuel
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037503123, guid: 65694fcf3e74a55448107288f4dab36e, type: 3}
       propertyPath: fireRate
       value: 1.5
       objectReference: {fileID: 0}

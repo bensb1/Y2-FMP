@@ -175,7 +175,7 @@ public class Spaceship : MonoBehaviour
             if (timer > waitTimer)
             {
 
-                Fuel.UseFuel(10);
+                Fuel.UseFuel(15);
 
                 timer = 0;
             }

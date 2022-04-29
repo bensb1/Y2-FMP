@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     public bool canShoot;
     public float fireRate;
     public float Health;
-    public int Refuel = 20;
+    public int Refuel = 5;
     private Fuel fuel;
     private Spaceship spaceship;
     private void Awake()

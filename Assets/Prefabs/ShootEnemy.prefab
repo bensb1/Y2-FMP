@@ -104,13 +104,18 @@ MonoBehaviour:
   bullet: {fileID: 4158352657879945460, guid: 956fa8ce5dba3cc48be1bd0ecd8cd03e, type: 3}
   explosion: {fileID: 6647379323841190202, guid: d39750de2dc607e4fabb5c2750e54fd9, type: 3}
   Extralife: {fileID: 5769147328760591007, guid: 79b481088677fcd49a68d51fb605a302, type: 3}
+  Blue_bullet: {fileID: 0}
+  Green_Bullet: {fileID: 0}
+  Purple_Bullet: {fileID: 0}
   bulletcolor: {r: 1, g: 1, b: 1, a: 1}
   xSpeed: 0
   ySpeed: 2
   score: 150
+  coins: 0
   canShoot: 1
   fireRate: 3
   Health: 20
+  Refuel: 5
 --- !u!1001 &3515615751812257270
 PrefabInstance:
   m_ObjectHideFlags: 0
