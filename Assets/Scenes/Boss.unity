@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 1570370354}
   - component: {fileID: 1570370357}
   - component: {fileID: 1570370358}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bomb_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1007,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570370353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.93, z: 0}
+  m_LocalPosition: {x: 1.76, y: -4.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1026,7 +1026,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bomb: {fileID: 1570370353}
+  killzone: {fileID: 1265316403}
   speed: 5
+  delay: 5
 --- !u!61 &1570370358
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1037,7 +1039,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.09471297}

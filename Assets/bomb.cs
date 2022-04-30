@@ -24,7 +24,16 @@ public class bomb : MonoBehaviour
             Bomb.transform.Translate(0, -0.01f, speed * Time.deltaTime, -0);
         }
     }
-    
-   
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            col.gameObject.GetComponent<Spaceship>().Damage();
+            Destroy(gameObject);
+        }
     }
+}
+
+
+
 
