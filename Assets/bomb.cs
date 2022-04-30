@@ -7,6 +7,7 @@ public class bomb : MonoBehaviour
     public GameObject Bomb;
     public GameObject killzone;
     public float speed = 5f;
+    public float delay = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +17,9 @@ public class bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(Bomb.transform.position.y > -4.44)
+        Destroy(GameObject.Find("bomb_0(Clone)"), this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
+
+        if (Bomb.transform.position.y > -4.44)
         {
             Bomb.transform.Translate(0, -0.01f, speed * Time.deltaTime, -0);
         }
