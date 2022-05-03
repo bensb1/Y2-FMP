@@ -7,7 +7,7 @@ public class bomb : MonoBehaviour
     public GameObject Bomb;
     public GameObject killzone;
     public float speed = 5f;
-    public float delay = 0;
+    public float delay = 1;
     // Start is called before the first frame update
     void Start()
     {
