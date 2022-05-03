@@ -21,7 +21,8 @@ public class Boss : MonoBehaviour
     public float speed = 5f;
     public Sprite[] sprites;
     private SpriteRenderer spriteRenderer;
-    private GameObject boss;
+    public GameObject boss;
+    private bool isCreated;
    
 
     
@@ -29,7 +30,7 @@ public class Boss : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        boss = GetComponent<GameObject>();
+    //    boss = GetComponent<GameObject>();
       
       
         bomb_Postion = transform.Find("bomb_postion").gameObject;
@@ -140,6 +141,13 @@ public class Boss : MonoBehaviour
 
             case float currentHealth when (currentHealth >= 500):
                 spriteRenderer.sprite = sprites[2];
+                if (!isCreated)
+                {
+                    Instantiate(boss, spawnPoints[0].transform.position, Quaternion.identity);
+                    Instantiate(boss, spawnPoints[1].transform.position, Quaternion.identity);
+                 //   Instantiate(boss, spawnPoints[2].transform.position, Quaternion.identity);
+                    isCreated = true;
+                }
                 break;
               case float currentHealth when (currentHealth >= 450):
                 spriteRenderer.sprite = sprites[3];
