@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public enum BulletType { Normal, Green, blue, purple };
 public class Spaceship : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class Spaceship : MonoBehaviour
     private float waitTimer = 2f;
     private Fuel Fuel;
     public AudioSource shootSoundEffect;
+    private Scene scene;
+    
     
     private void Awake()
     {
@@ -37,6 +40,7 @@ public class Spaceship : MonoBehaviour
     }
     private void Start()
     {
+        scene = SceneManager.GetActiveScene();
         bulletType = (BulletType)PlayerPrefs.GetInt("playerWithBullet");
         Debug.Log(bulletType);
 
@@ -79,6 +83,7 @@ public class Spaceship : MonoBehaviour
 
         delay++;
         AnimationState();
+        loadscene();
        
 
     }
@@ -191,6 +196,17 @@ public class Spaceship : MonoBehaviour
         }
 
 
+    }
+    public void loadscene()
+    {
+        if(SceneManager.GetActiveScene().name != "Boss")
+        {
+            if (PlayerPrefs.GetInt("Score") >= 10000)
+            {
+                SceneManager.LoadScene("Boss");
+            }
+        }
+        
     }
 
 }
