@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
     {
 
 
-        Debug.Log(lastScore);
+        //Debug.Log(lastScore);
         if (PlayerPrefs.GetInt("Score") != lastScore)
         {
             BackgroundMusic();

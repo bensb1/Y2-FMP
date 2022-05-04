@@ -22,7 +22,7 @@ public class Spaceship : MonoBehaviour
     Rigidbody2D rb;
     public float speed;
     int startHealth = 3;
-    int currentHealth;
+     public int currentHealth;
     private float timer = 0f;
     private float waitTimer = 2f;
     private Fuel Fuel;

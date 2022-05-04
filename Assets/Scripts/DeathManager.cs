@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class DeathManager : MonoBehaviour
 {
-    GameObject player;
+    public GameObject player;
     bool gameOver = false;
+    private Spaceship spaceship;
+
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        spaceship = GameObject.Find("Player").GetComponent<Spaceship>();
+
     }
 
     // Update is called once per frame
@@ -18,6 +21,9 @@ public class DeathManager : MonoBehaviour
     {
         if(player==null&&!gameOver)
         {
+            Debug.Log("gameover:" + gameOver);
+            Debug.Log("player:" + player);
+ 
             GameOver();
             StartCoroutine(LoadGameOver());
         }
@@ -32,7 +38,16 @@ public class DeathManager : MonoBehaviour
     }
     IEnumerator LoadGameOver()
     {
-         yield return new WaitForSeconds(0f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+         yield return new WaitForSeconds(2f);
+        
+        
+        if(SceneManager.GetActiveScene().name == "Boss" )
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2 );
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }
