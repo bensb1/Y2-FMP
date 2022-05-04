@@ -141,12 +141,17 @@ public class Boss : MonoBehaviour
 
             case float currentHealth when (currentHealth >= 500):
                 spriteRenderer.sprite = sprites[2];
-                if (!isCreated)
+                if (gameObject.name != "Boss(Clone)")
                 {
-                    Instantiate(boss, spawnPoints[0].transform.position, Quaternion.identity);
-                    Instantiate(boss, spawnPoints[1].transform.position, Quaternion.identity);
-                 //   Instantiate(boss, spawnPoints[2].transform.position, Quaternion.identity);
-                    isCreated = true;
+
+
+                    if (!isCreated)
+                    {
+                        Instantiate(boss, spawnPoints[0].transform.position, Quaternion.identity);
+                        Instantiate(boss, spawnPoints[1].transform.position, Quaternion.identity);
+                        //   Instantiate(boss, spawnPoints[2].transform.position, Quaternion.identity);
+                        isCreated = true;
+                    }
                 }
                 break;
               case float currentHealth when (currentHealth >= 450):
