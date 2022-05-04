@@ -23,6 +23,7 @@ public class Boss : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public GameObject boss;
     private bool isCreated;
+    
    
 
     
@@ -148,10 +149,16 @@ public class Boss : MonoBehaviour
 
                     if (!isCreated)
                     {
-                        Instantiate(boss, spawnPoints[0].transform.position, Quaternion.identity);
-                        Instantiate(boss, spawnPoints[1].transform.position, Quaternion.identity);
-                        //   Instantiate(boss, spawnPoints[2].transform.position, Quaternion.identity);
+                      bossChild[0] =  Instantiate(boss, spawnPoints[0].transform.position, Quaternion.identity) as GameObject;
+                       bossChild[1] = Instantiate(boss, spawnPoints[1].transform.position, Quaternion.identity) as GameObject;
                         isCreated = true;
+                        if (GameObject.Find("Boss(Clone)") )
+                        {
+                            bossChild[0].transform.localScale = new Vector2(1.25f, 1.25f);
+                           bossChild[1].transform.localScale = new Vector2(1.25f, 1.25f);
+                        }
+                        //   Instantiate(boss, spawnPoints[2].transform.position, Quaternion.identity);
+                        
                     }
                 }
                 break;
