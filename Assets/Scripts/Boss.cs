@@ -85,12 +85,12 @@ public class Boss : MonoBehaviour
     {
         if(col.gameObject.name == "RightWall")
         {
-            Debug.Log("Hit the RightWall");
+           // Debug.Log("Hit the RightWall");
             changeDirection = true;
         }
         if(col.gameObject.name == "LeftWall")
         {
-            Debug.Log("Hit the LeftWall");
+          //  Debug.Log("Hit the LeftWall");
             changeDirection = false;
         }
     }
@@ -100,6 +100,7 @@ public class Boss : MonoBehaviour
         {
             bomb.SetActive(true);
             Instantiate(bomb, bomb_Postion.transform.position, Quaternion.identity);
+            Debug.Log(bomb);
             
             
             //    (Bombclone)
