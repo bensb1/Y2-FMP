@@ -21,7 +21,7 @@ public class Boss : MonoBehaviour
     public float speed = 5f;
     public Sprite[] sprites;
     private SpriteRenderer spriteRenderer;
-    public GameObject boss;
+    private GameObject boss;
     private bool isCreated;
     
    
@@ -31,7 +31,8 @@ public class Boss : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-    //    boss = GetComponent<GameObject>();
+        boss = GameObject.Find("Boss");
+
       
       
         bomb_Postion = transform.Find("bomb_postion").gameObject;
@@ -101,7 +102,7 @@ public class Boss : MonoBehaviour
         {
             bomb.SetActive(true);
             Instantiate(bomb, bomb_Postion.transform.position, Quaternion.identity);
-            Debug.Log(bomb);
+         //   Debug.Log(bomb);
             
             
             //    (Bombclone)
@@ -149,7 +150,7 @@ public class Boss : MonoBehaviour
 
                     if (!isCreated)
                     {
-                      bossChild[0] =  Instantiate(boss, spawnPoints[0].transform.position, Quaternion.identity) as GameObject;
+                    /*  bossChild[0] =  Instantiate(boss, spawnPoints[0].transform.position, Quaternion.identity) as GameObject;
                        bossChild[1] = Instantiate(boss, spawnPoints[1].transform.position, Quaternion.identity) as GameObject;
                         isCreated = true;
                         if (GameObject.Find("Boss(Clone)") )
@@ -157,6 +158,7 @@ public class Boss : MonoBehaviour
                             bossChild[0].transform.localScale = new Vector2(1.25f, 1.25f);
                            bossChild[1].transform.localScale = new Vector2(1.25f, 1.25f);
                         }
+                    */
                         //   Instantiate(boss, spawnPoints[2].transform.position, Quaternion.identity);
                         
                     }
@@ -184,7 +186,7 @@ public class Boss : MonoBehaviour
                 spriteRenderer.sprite = sprites[9];
                 break;
             case float currentHealth when (currentHealth <= 0):
-                Destroy(this);
+                Destroy(boss);
                 break;
 
             default:
