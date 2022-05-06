@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour
    
      public Slider slider;
     public int maxHealth = 700;
-    private float currentHealth;
+    public float currentHealth;
     public GameObject[] bossChild;
     public Transform[] spawnPoints;
     public float MovementSpeed = 10f;
@@ -24,18 +24,19 @@ public class Boss : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private GameObject boss;
     private bool isCreated;
-    
-   
+    public int isBossDead;
 
-    
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         boss = GameObject.Find("Boss");
+        PlayerPrefs.SetInt("isBossDead", 0);
 
-      
-      
+
         bomb_Postion = transform.Find("bomb_postion").gameObject;
     
         enemy = GetComponent<Rigidbody2D>();
@@ -47,6 +48,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         timer += Time.deltaTime;
         enemyMovement();
         enemyAttacks();
@@ -188,6 +190,7 @@ public class Boss : MonoBehaviour
                 break;
             case float currentHealth when (currentHealth <= 0):
                 Destroy(boss);
+                PlayerPrefs.SetInt("isBossDead", 1);
                 SceneManager.LoadScene("Post boss option");
                 break;
 

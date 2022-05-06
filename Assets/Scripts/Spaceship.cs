@@ -15,27 +15,31 @@ public class Spaceship : MonoBehaviour
     public GameObject Blue_bullet;
     public GameObject Green_Bullet;
     public GameObject Purple_Bullet;
-    
+
     // public int bulletType = 1;
 
     public BulletType bulletType = BulletType.Normal;
     Rigidbody2D rb;
     public float speed;
     int startHealth = 3;
-     public int currentHealth;
+    public int currentHealth;
     private float timer = 0f;
     private float waitTimer = 2f;
     private Fuel Fuel;
     public AudioSource shootSoundEffect;
     private Scene scene;
+    private Boss boss;
     
-    
+
+
     private void Awake()
     {
-        
+
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        boss = GetComponent<Boss>();
         a = transform.Find("a").gameObject;
+        
         b = transform.Find("b").gameObject;
     }
     private void Start()
@@ -50,6 +54,9 @@ public class Spaceship : MonoBehaviour
         {
             PlayerPrefs.SetInt("Health", startHealth);
             currentHealth = 3;
+            
+            boss.currentHealth = boss.maxHealth;
+            Debug.Log(boss.currentHealth);
         }
 
 
@@ -60,7 +67,7 @@ public class Spaceship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         timer += Time.deltaTime;
         rb.AddForce(new Vector2(Input.GetAxis("Horizontal") * speed, 0));
 
@@ -76,15 +83,15 @@ public class Spaceship : MonoBehaviour
 
 
         }
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            
+
         }
 
         delay++;
         AnimationState();
         loadscene();
-       
+
 
     }
     public void Damage()
@@ -199,15 +206,18 @@ public class Spaceship : MonoBehaviour
     }
     public void loadscene()
     {
-        
-        if(SceneManager.GetActiveScene().name != "Boss")
+        if(PlayerPrefs.GetInt("isBossDead") == 0)
         {
-            if (PlayerPrefs.GetInt("Score") >= 10000)
+            if (SceneManager.GetActiveScene().name != "Boss")
             {
-                SceneManager.LoadScene("Boss");
+                if (PlayerPrefs.GetInt("Score") >= 5000)
+                {
+                    SceneManager.LoadScene("Boss");
+                }
             }
+
         }
-        
+
     }
 
 }
