@@ -199,6 +199,7 @@ public class Spaceship : MonoBehaviour
     }
     public void loadscene()
     {
+        
         if(SceneManager.GetActiveScene().name != "Boss")
         {
             if (PlayerPrefs.GetInt("Score") >= 10000)

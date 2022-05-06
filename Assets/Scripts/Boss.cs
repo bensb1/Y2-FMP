@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -187,6 +188,7 @@ public class Boss : MonoBehaviour
                 break;
             case float currentHealth when (currentHealth <= 0):
                 Destroy(boss);
+                SceneManager.LoadScene("Post boss option");
                 break;
 
             default:
