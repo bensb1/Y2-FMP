@@ -105,6 +105,7 @@ public class Spaceship : MonoBehaviour
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(gameObject, 0.1f);
             currentHealth = PlayerPrefs.GetInt("Health", startHealth);
+            PlayerPrefs.SetInt("isBossDead", 0);
         }
         IEnumerator Blink()
         {
