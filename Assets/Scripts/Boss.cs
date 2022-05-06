@@ -25,6 +25,8 @@ public class Boss : MonoBehaviour
     private GameObject boss;
     private bool isCreated;
     public int isBossDead;
+    private int babyBossMaxHealth = 300;
+    private int babyBossCurrentHealth;
 
 
 
@@ -58,6 +60,7 @@ public class Boss : MonoBehaviour
     }
     public void Damage()
     {
+        
         
         currentHealth = currentHealth - 0.5f;
         slider.value = currentHealth;
@@ -153,15 +156,24 @@ public class Boss : MonoBehaviour
 
                     if (!isCreated)
                     {
-                    /*  bossChild[0] =  Instantiate(boss, spawnPoints[0].transform.position, Quaternion.identity) as GameObject;
+                      bossChild[0] =  Instantiate(boss, spawnPoints[0].transform.position, Quaternion.identity) as GameObject;
                        bossChild[1] = Instantiate(boss, spawnPoints[1].transform.position, Quaternion.identity) as GameObject;
                         isCreated = true;
                         if (GameObject.Find("Boss(Clone)") )
                         {
                             bossChild[0].transform.localScale = new Vector2(1.25f, 1.25f);
                            bossChild[1].transform.localScale = new Vector2(1.25f, 1.25f);
+                           bossChild[0].GetComponent<Boss>().maxHealth = babyBossMaxHealth;
+                           bossChild[1].GetComponent<Boss>().maxHealth = babyBossMaxHealth;
+                            
+                            // currentHealth = babyBossMaxHealth;
+
+                            Debug.Log(babyBossMaxHealth);
+
+                            
+                            
                         }
-                    */
+                    
                         //   Instantiate(boss, spawnPoints[2].transform.position, Quaternion.identity);
                         
                     }
