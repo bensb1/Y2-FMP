@@ -165,7 +165,9 @@ public class Boss : MonoBehaviour
                            bossChild[1].transform.localScale = new Vector2(1.25f, 1.25f);
                            bossChild[0].GetComponent<Boss>().maxHealth = babyBossMaxHealth;
                            bossChild[1].GetComponent<Boss>().maxHealth = babyBossMaxHealth;
-                            
+                            bossChild[0].GetComponent<Boss>().currentHealth = babyBossMaxHealth;
+                            bossChild[1].GetComponent<Boss>().currentHealth = babyBossMaxHealth;
+
                             // currentHealth = babyBossMaxHealth;
 
                             Debug.Log(babyBossMaxHealth);
