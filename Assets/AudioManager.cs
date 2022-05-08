@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -8,11 +9,23 @@ public class AudioManager : MonoBehaviour
     public AudioClip Calm;
     public AudioClip DubStep;
     private int lastScore;
+    private static readonly string FirstPlay = "FirstPlay";
+    private int firstPlayInt;
+    public Slider backgroundSlider;
+    private float backgroundFloat;
 
     // Start is called before the first frame update
     void Start()
     {
+        firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
+        if(firstPlayInt == 0)
+        {
 
+        }
+        else
+        {
+
+        }
     }
 
     // Update is called once per frame
