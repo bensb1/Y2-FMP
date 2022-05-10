@@ -16,6 +16,10 @@ public class AudioManager : MonoBehaviour
     private float backgroundFloat;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
     void Start()
     {
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
