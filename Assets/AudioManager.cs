@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip DubStep;
     private int lastScore;
     private static readonly string FirstPlay = "FirstPlay";
+    private static readonly string BackgroundPref = "BackgroundPref";
     private int firstPlayInt;
     public Slider backgroundSlider;
     private float backgroundFloat;
@@ -20,11 +21,26 @@ public class AudioManager : MonoBehaviour
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
         if(firstPlayInt == 0)
         {
-
+            backgroundFloat = 0.125f;
+            backgroundSlider.value = backgroundFloat;
+            PlayerPrefs.SetFloat(BackgroundPref, backgroundFloat);
+            PlayerPrefs.SetInt(FirstPlay, -1);
         }
         else
         {
-
+           backgroundFloat =  PlayerPrefs.GetFloat(BackgroundPref);
+            backgroundSlider.value = backgroundFloat;
+        }
+    }
+    public void SaveSound()
+    {
+        PlayerPrefs.SetFloat(BackgroundPref, backgroundSlider.value);
+    }
+    private void OnApplicationFocus(bool InFocus)
+    {
+        if(!InFocus)
+        {
+            SaveSound();
         }
     }
 
@@ -66,6 +82,12 @@ public class AudioManager : MonoBehaviour
             }
           
         }
+    }
+    public void UpdateSound()
+    {
+        Backgroundmusic.volume = backgroundSlider.value;
+
+
     }
 
 }
