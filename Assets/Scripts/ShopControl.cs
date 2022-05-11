@@ -28,7 +28,8 @@ public class ShopControl : MonoBehaviour
     private void Update()
     {
       
-        moneyAmountText.text = "Money:" + Coins.ToString() + "$";
+        moneyAmountText.text = "Money: £" + Coins.ToString();
+        moneyAmountText.fontSize = 40;
         isBluebulletSold = PlayerPrefs.GetInt("isBluebulletSold");
         isGreenbulletSold = PlayerPrefs.GetInt("isGreenbulletSold");
         isPurplebulletSold = PlayerPrefs.GetInt("isPurplebulletSold");
@@ -41,7 +42,7 @@ public class ShopControl : MonoBehaviour
         {
             buyButton.interactable = false;
         }
-        if (Coins >= 250 && isGreenbulletSold ==0)
+        if (Coins >= 125 && isGreenbulletSold ==0)
         {
             buyButtonGreen.interactable = true;
               
@@ -50,7 +51,7 @@ public class ShopControl : MonoBehaviour
         {
             buyButtonGreen.interactable = false;
         }
-        if (Coins >= 350 && isPurplebulletSold == 0)
+        if (Coins >= 300 && isPurplebulletSold == 0)
         {
             buyButtonPurple.interactable = true;
 
@@ -93,7 +94,7 @@ public class ShopControl : MonoBehaviour
     public void buyGreenBullet()
     {
 
-        Coins -=250;
+        Coins -=125;
         PlayerPrefs.SetInt("Coins", Coins);
 
         PlayerPrefs.SetInt("isGreenbulletSold", 1);
@@ -111,7 +112,7 @@ public class ShopControl : MonoBehaviour
     public void buyPurpleBullet()
     {
 
-        Coins -= 350;
+        Coins -= 300;
         PlayerPrefs.SetInt("Coins", Coins);
 
         PlayerPrefs.SetInt("isPurplebulletSold", 1);
