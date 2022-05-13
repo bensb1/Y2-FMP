@@ -18,7 +18,8 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+       // DontDestroyOnLoad(transform.gameObject);
+       // DontDestroyOnLoad(backgroundSlider);
     }
     void Start()
     {
