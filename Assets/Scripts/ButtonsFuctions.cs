@@ -26,4 +26,8 @@ public void Quit()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
     }
+    public void MainMenuToInstructions()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 6);
+    }
 }
