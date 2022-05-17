@@ -26,7 +26,7 @@ public class Boss : MonoBehaviour
     private bool isCreated;
     public int isBossDead;
     private int babyBossMaxHealth = 300;
-    private int babyBossCurrentHealth;
+    public float babyBossCurrentHealth;
 
 
 
@@ -60,9 +60,13 @@ public class Boss : MonoBehaviour
     }
     public void Damage()
     {
+      /*  if (GameObject.Find("Boss(Clone)"))
+        {
+            babyBossCurrentHealth = babyBossCurrentHealth - 0.5f;
         
-        
-        currentHealth = currentHealth - 0.5f;
+        } */
+
+            currentHealth = currentHealth - 0.5f;
         slider.value = currentHealth;
         Debug.Log(slider.value);
 
@@ -165,8 +169,17 @@ public class Boss : MonoBehaviour
                            bossChild[1].transform.localScale = new Vector2(1.25f, 1.25f);
                            bossChild[0].GetComponent<Boss>().maxHealth = babyBossMaxHealth;
                            bossChild[1].GetComponent<Boss>().maxHealth = babyBossMaxHealth;
-                            bossChild[0].GetComponent<Boss>().currentHealth = babyBossMaxHealth;
-                            bossChild[1].GetComponent<Boss>().currentHealth = babyBossMaxHealth;
+                            bossChild[0].GetComponent<Boss>().babyBossCurrentHealth = babyBossMaxHealth;
+                            bossChild[1].GetComponent<Boss>().babyBossCurrentHealth= babyBossMaxHealth;
+                            if(bossChild[0].GetComponent<Boss>().babyBossCurrentHealth <=0)
+                            {
+                                Destroy(bossChild[0]);
+                            }
+                            if (bossChild[1].GetComponent<Boss>().babyBossCurrentHealth <= 0)
+                            {
+                                Destroy(bossChild[1]);
+                            }
+
 
                             // currentHealth = babyBossMaxHealth;
 
@@ -203,6 +216,7 @@ public class Boss : MonoBehaviour
                 spriteRenderer.sprite = sprites[9];
                 break;
             case float currentHealth when (currentHealth <= 0):
+              //  if (bossChild[0])
                 Destroy(boss);
                 PlayerPrefs.SetInt("isBossDead", 1);
                 SceneManager.LoadScene("Post boss option");

@@ -181,7 +181,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3110629b48aa48d488499829e663ec1b, type: 3}
+    m_Font: {fileID: 12800000, guid: b6f3ecc2d88a8be4188590fec09b67f0, type: 3}
     m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3110629b48aa48d488499829e663ec1b, type: 3}
+    m_Font: {fileID: 12800000, guid: b6f3ecc2d88a8be4188590fec09b67f0, type: 3}
     m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
@@ -676,8 +676,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 89.11}
-  m_SizeDelta: {x: 364.0497, y: 249.7}
+  m_AnchoredPosition: {x: 15, y: 96}
+  m_SizeDelta: {x: 548.9653, y: 249.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797157179
 MonoBehaviour:
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -700,7 +700,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3110629b48aa48d488499829e663ec1b, type: 3}
+    m_Font: {fileID: 12800000, guid: 6ead0064bf7924b4ba953b3295f2cb4f, type: 3}
     m_FontSize: 76
     m_FontStyle: 0
     m_BestFit: 0
@@ -877,7 +877,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7c432326e95349445b9115882e69990b, type: 3}
+    m_Font: {fileID: 12800000, guid: b6f3ecc2d88a8be4188590fec09b67f0, type: 3}
     m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
@@ -889,7 +889,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HighScoe
+  m_Text: HighScore
 --- !u!222 &1839140365
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -913,6 +913,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 942764786, guid: bf4cf95fdf1eded46b05e7cf754d83ae, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: b6f3ecc2d88a8be4188590fec09b67f0, type: 3}
     - target: {fileID: 1015682993, guid: bf4cf95fdf1eded46b05e7cf754d83ae, type: 3}
       propertyPath: m_RootOrder
       value: 10
