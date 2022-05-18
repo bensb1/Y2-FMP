@@ -27,6 +27,7 @@ public class Boss : MonoBehaviour
     public int isBossDead;
     private int babyBossMaxHealth = 300;
     public float babyBossCurrentHealth;
+    int BabyCurrentHealth;
 
 
 
@@ -170,8 +171,13 @@ public class Boss : MonoBehaviour
                            bossChild[0].GetComponent<Boss>().maxHealth = babyBossMaxHealth;
                            bossChild[1].GetComponent<Boss>().maxHealth = babyBossMaxHealth;
                             bossChild[0].GetComponent<Boss>().babyBossCurrentHealth = babyBossMaxHealth;
-                            bossChild[1].GetComponent<Boss>().babyBossCurrentHealth= babyBossMaxHealth;
-                            if(bossChild[0].GetComponent<Boss>().babyBossCurrentHealth <=0)
+                            bossChild[1].GetComponent<Boss>().babyBossCurrentHealth = babyBossMaxHealth;
+                            
+
+
+
+
+                            if (bossChild[0].GetComponent<Boss>().babyBossCurrentHealth <=0)
                             {
                                 Destroy(bossChild[0]);
                             }
@@ -217,7 +223,7 @@ public class Boss : MonoBehaviour
                 break;
             case float currentHealth when (currentHealth <= 0):
               //  if (bossChild[0])
-              if(PlayerPrefs.GetInt("isBossDead") == 1)
+            //  if(bossChild[0].GetComponent<Boss>.babyBossCurrentHealth )
                 Destroy(boss);
                 PlayerPrefs.SetInt("isBossDead", 1);
                 SceneManager.LoadScene("Post boss option");
