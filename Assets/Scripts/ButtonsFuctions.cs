@@ -30,4 +30,8 @@ public void Quit()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 6);
     }
+    public void InstructionToMainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 6);
+    }
 }
