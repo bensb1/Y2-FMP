@@ -40,9 +40,9 @@ public class Fuel : MonoBehaviour
 
     public void UseFuel(int amount)
     {
-        Debug.Log("CF TOTAL " + (currentFuel - amount));
-        Debug.Log("CF " + (currentFuel ));
-        Debug.Log("AMOUNT " + (amount));
+      //  Debug.Log("CF TOTAL " + (currentFuel - amount));
+      //  Debug.Log("CF " + (currentFuel ));
+      //  Debug.Log("AMOUNT " + (amount));
 
         if (currentFuel  >= 0)
         {
