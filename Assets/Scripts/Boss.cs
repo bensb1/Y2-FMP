@@ -60,11 +60,11 @@ public class Boss : MonoBehaviour
     }
     public void Damage()
     {
-      /*  if (GameObject.Find("Boss(Clone)"))
+        if (GameObject.Find("Boss(Clone)"))
         {
             babyBossCurrentHealth = babyBossCurrentHealth - 0.5f;
         
-        } */
+        } 
 
             currentHealth = currentHealth - 0.5f;
         slider.value = currentHealth;
@@ -183,7 +183,7 @@ public class Boss : MonoBehaviour
 
                             // currentHealth = babyBossMaxHealth;
 
-                            Debug.Log(babyBossMaxHealth);
+                            Debug.Log(babyBossCurrentHealth);
 
                             
                             
@@ -217,6 +217,7 @@ public class Boss : MonoBehaviour
                 break;
             case float currentHealth when (currentHealth <= 0):
               //  if (bossChild[0])
+              if(PlayerPrefs.GetInt("isBossDead") == 1)
                 Destroy(boss);
                 PlayerPrefs.SetInt("isBossDead", 1);
                 SceneManager.LoadScene("Post boss option");

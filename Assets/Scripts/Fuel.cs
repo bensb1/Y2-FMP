@@ -19,6 +19,10 @@ public class Fuel : MonoBehaviour
         slider.maxValue = maxFuel;
         slider.value = maxFuel;
     }
+    public void Update()
+    {
+        //Debug.Log("CF "+currentFuel);
+    }
 
     // Update is called once per frame
 
@@ -36,7 +40,11 @@ public class Fuel : MonoBehaviour
 
     public void UseFuel(int amount)
     {
-        if (currentFuel - amount >= 0)
+        Debug.Log("CF TOTAL " + (currentFuel - amount));
+        Debug.Log("CF " + (currentFuel ));
+        Debug.Log("AMOUNT " + (amount));
+
+        if (currentFuel  >= 0)
         {
             currentFuel -= amount;
             slider.value = currentFuel;
@@ -48,7 +56,7 @@ public class Fuel : MonoBehaviour
     }
     public void fuelEmpty()
     {
-        if (currentFuel <= 0)
+        if (currentFuel  <= 0)
         {
             spaceship.speed = 2f;
         }
