@@ -249,9 +249,8 @@ MonoBehaviour:
   Purple_Bullet: {fileID: 7969250234561990012, guid: 516c56f81b70a72489554d7d7f973cc4, type: 3}
   bulletType: 0
   speed: 2
+  currentHealth: 0
   shootSoundEffect: {fileID: 1529391004}
-  BackgroundMusic1: {fileID: 1529391005}
-  BackgroundMusic2: {fileID: 1529391006}
 --- !u!95 &4970442257176644241
 Animator:
   serializedVersion: 3
