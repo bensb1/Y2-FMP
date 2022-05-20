@@ -21,8 +21,13 @@ public class Enemy : MonoBehaviour
     private Spaceship spaceship;
     private void Awake()
     {
-        fuel = GameObject.Find("FuelBar").GetComponent<Fuel>();
-        spaceship = GameObject.Find("Player").GetComponent<Spaceship>();
+        if (spaceship != null)
+        {
+
+
+            fuel = GameObject.Find("FuelBar").GetComponent<Fuel>();
+            spaceship = GameObject.Find("Player").GetComponent<Spaceship>();
+        }
         rb = GetComponent<Rigidbody2D>();
 
 

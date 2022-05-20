@@ -56,7 +56,7 @@ public class Spaceship : MonoBehaviour
             currentHealth = 3;
             
 
-            Debug.Log(boss.currentHealth);
+
         }
 
 
