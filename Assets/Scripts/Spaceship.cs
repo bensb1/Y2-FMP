@@ -55,7 +55,7 @@ public class Spaceship : MonoBehaviour
             PlayerPrefs.SetInt("Health", startHealth);
             currentHealth = 3;
             
-            boss.currentHealth = boss.maxHealth;
+
             Debug.Log(boss.currentHealth);
         }
 
