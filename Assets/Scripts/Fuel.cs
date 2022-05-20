@@ -12,10 +12,11 @@ public class Fuel : MonoBehaviour
     private Spaceship spaceship;
     // Start is called before the first frame update
     void Start()
-    { 
-        
+    {
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
             spaceship = GameObject.Find("Player").GetComponent<Spaceship>();
-        
+        }
         currentFuel = maxFuel;
         slider.maxValue = maxFuel;
         slider.value = maxFuel;
@@ -41,23 +42,23 @@ public class Fuel : MonoBehaviour
 
     public void UseFuel(int amount)
     {
-      //  Debug.Log("CF TOTAL " + (currentFuel - amount));
-      //  Debug.Log("CF " + (currentFuel ));
-      //  Debug.Log("AMOUNT " + (amount));
+        //  Debug.Log("CF TOTAL " + (currentFuel - amount));
+        //  Debug.Log("CF " + (currentFuel ));
+        //  Debug.Log("AMOUNT " + (amount));
 
-        if (currentFuel  >= 0)
+        if (currentFuel >= 0)
         {
             currentFuel -= amount;
             slider.value = currentFuel;
         }
-     else
+        else
         {
             fuelEmpty();
         }
     }
     public void fuelEmpty()
     {
-        if (currentFuel  <= 0)
+        if (currentFuel <= 0)
         {
             spaceship.speed = 2f;
         }
