@@ -12,9 +12,10 @@ public class Fuel : MonoBehaviour
     private Spaceship spaceship;
     // Start is called before the first frame update
     void Start()
-    {
-        spaceship = GameObject.Find("Player").GetComponent<Spaceship>();
-
+    { 
+        
+            spaceship = GameObject.Find("Player").GetComponent<Spaceship>();
+        
         currentFuel = maxFuel;
         slider.maxValue = maxFuel;
         slider.value = maxFuel;
