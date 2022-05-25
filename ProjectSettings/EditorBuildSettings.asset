@@ -8,25 +8,25 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: a0166b12e68571a4098e6901f63696bb
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/game.unity
     guid: 2d320012882a6d141abc11d45bf7e96f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 2094400ea04052041b27ca9eb7350bbe
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 891cee311918b53409eaa2ac6e50edad
   - enabled: 1
     path: Assets/Scenes/Boss.unity
     guid: f77900f871ea0674691a5c96769b9515
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Post boss option.unity
     guid: e1785f6cddb42254ebbf63a0663df092
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Instructions.unity
     guid: 4eb2325db9522624288182a2753911ee
   m_configObjects: {}
