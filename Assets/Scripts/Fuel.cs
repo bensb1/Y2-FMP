@@ -60,7 +60,7 @@ public class Fuel : MonoBehaviour
     {
         if (currentFuel <= 0)
         {
-            spaceship.speed = 2f;
+            spaceship.speed = 6f;
         }
     }
 

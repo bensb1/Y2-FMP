@@ -8,7 +8,7 @@ public class Spaceship : MonoBehaviour
 
     public Animator anim;
     private State state = State.idle;
-    private enum State { idle, Moving, Jumping, falling, hurt }
+    private enum State { idle, Moving,}
     int delay = 0;
     GameObject a, b;
     public GameObject bullet, explosion;
@@ -27,8 +27,7 @@ public class Spaceship : MonoBehaviour
     private float waitTimer = 2f;
     private Fuel Fuel;
     public AudioSource shootSoundEffect;
-    private Scene scene;
-    private Boss boss;
+    
     
 
 
@@ -37,14 +36,14 @@ public class Spaceship : MonoBehaviour
 
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        boss = GetComponent<Boss>();
+        
         a = transform.Find("a").gameObject;
         
         b = transform.Find("b").gameObject;
     }
     private void Start()
     {
-        scene = SceneManager.GetActiveScene();
+        
         bulletType = (BulletType)PlayerPrefs.GetInt("playerWithBullet");
         Debug.Log(bulletType);
 
@@ -197,7 +196,7 @@ public class Spaceship : MonoBehaviour
         }
         if (!Input.GetKey(KeyCode.B))
         {
-            speed = 6f;
+            speed = 20f;
         }
         else
         {
