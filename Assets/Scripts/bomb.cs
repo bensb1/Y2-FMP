@@ -34,7 +34,7 @@ public class bomb : MonoBehaviour
 
         if (Bomb.transform.position.y > -4.44)
         {
-            Bomb.transform.Translate(0, -0.01f, speed * Time.deltaTime, -0);
+            Bomb.transform.Translate(0, -0.11f, speed * Time.deltaTime, -0);
         }
     }
     private void OnCollisionEnter2D(Collision2D col)
