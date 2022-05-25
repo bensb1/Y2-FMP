@@ -76,7 +76,7 @@ public class Spaceship : MonoBehaviour
         Boost();
         // anim.SetBool("Moving", true);
         anim.SetInteger("State", (int)state); //sets animation based on enuemrator state */
-        if (Input.GetKey(KeyCode.Space) && delay > 10)
+        if (Input.GetKey(KeyCode.Space) && delay > 3)
         {
             Shoot();
 
