@@ -192,11 +192,11 @@ public class Spaceship : MonoBehaviour
 
                 timer = 0;
             }
-            speed = 8f;
+            speed = 30f;
         }
         if (!Input.GetKey(KeyCode.B))
         {
-            speed = 20f;
+            speed = 15f;
         }
         else
         {
